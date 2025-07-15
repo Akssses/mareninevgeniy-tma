@@ -1,0 +1,12 @@
+<svg width="375" height="241" viewBox="0 0 375 241" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_f_2646_276)">
+<g clip-path="url(#paint0_angular_2646_276_clip_path)" data-figma-skip-parse="true"><g transform="matrix(0 0.0275 -0.1165 0 244.5 13.5)"><foreignObject x="-1036.36" y="-1036.36" width="2072.73" height="2072.73"><div xmlns="http://www.w3.org/1999/xhtml" style="background:conic-gradient(from 90deg,rgba(222, 99, 31, 1) 0deg,rgba(255, 143, 82, 1) 180deg,rgba(120, 53, 16, 1) 360deg);height:100%;width:100%;opacity:1"></div></foreignObject></g></g><ellipse cx="244.5" cy="13.5" rx="116.5" ry="27.5" data-figma-gradient-fill="{&#34;type&#34;:&#34;GRADIENT_ANGULAR&#34;,&#34;stops&#34;:[{&#34;color&#34;:{&#34;r&#34;:0.87058824300765991,&#34;g&#34;:0.38823530077934265,&#34;b&#34;:0.12156862765550613,&#34;a&#34;:1.0},&#34;position&#34;:0.0},{&#34;color&#34;:{&#34;r&#34;:1.0,&#34;g&#34;:0.56407582759857178,&#34;b&#34;:0.3230769932270050,&#34;a&#34;:1.0},&#34;position&#34;:0.50},{&#34;color&#34;:{&#34;r&#34;:0.47058823704719543,&#34;g&#34;:0.20985692739486694,&#34;b&#34;:0.065712772309780121,&#34;a&#34;:1.0},&#34;position&#34;:1.0}],&#34;stopsVar&#34;:[{&#34;color&#34;:{&#34;r&#34;:0.87058824300765991,&#34;g&#34;:0.38823530077934265,&#34;b&#34;:0.12156862765550613,&#34;a&#34;:1.0},&#34;position&#34;:0.0},{&#34;color&#34;:{&#34;r&#34;:1.0,&#34;g&#34;:0.56407582759857178,&#34;b&#34;:0.3230769932270050,&#34;a&#34;:1.0},&#34;position&#34;:0.50},{&#34;color&#34;:{&#34;r&#34;:0.47058823704719543,&#34;g&#34;:0.20985692739486694,&#34;b&#34;:0.065712772309780121,&#34;a&#34;:1.0},&#34;position&#34;:1.0}],&#34;transform&#34;:{&#34;m00&#34;:1.4267136666415263e-14,&#34;m01&#34;:-233.0,&#34;m02&#34;:361.0,&#34;m10&#34;:55.0,&#34;m11&#34;:3.3677788578441014e-15,&#34;m12&#34;:-14.0},&#34;opacity&#34;:1.0,&#34;blendMode&#34;:&#34;NORMAL&#34;,&#34;visible&#34;:true}"/>
+</g>
+<defs>
+<filter id="filter0_f_2646_276" x="-72" y="-214" width="633" height="455" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="100" result="effect1_foregroundBlur_2646_276"/>
+</filter>
+<clipPath id="paint0_angular_2646_276_clip_path"><ellipse cx="244.5" cy="13.5" rx="116.5" ry="27.5"/></clipPath></defs>
+</svg>

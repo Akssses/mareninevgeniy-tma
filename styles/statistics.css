@@ -1,0 +1,106 @@
+.sectionStatistics {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.slider {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scroll-behavior: smooth;
+  margin-top: 10px;
+}
+
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  min-width: 170px;
+  background: #fafafad7;
+  border-radius: 20px;
+  padding: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 2px dashed #e5e5ea;
+}
+
+.iconContainer {
+  width: 34px;
+  height: 34px;
+  background: #fef2e2a7;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.infoHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: #1a1a1a;
+}
+
+.cardTitle {
+  font-size: 12px;
+  font-weight: 500;
+  color: #8e8e93;
+}
+
+.amount {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: #ffffff;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.change {
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.change.positive {
+  color: #16a34a;
+}
+
+.change.negative {
+  color: #dc2626;
+}
+
+.period {
+  font-size: 14px;
+  color: #6b7280;
+  font-weight: 500;
+}

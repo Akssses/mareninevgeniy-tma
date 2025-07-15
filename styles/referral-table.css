@@ -1,0 +1,152 @@
+.sectionTable {
+  padding: 20px;
+  background: #f8f9faa5;
+  border-radius: 16px;
+  max-width: 100%;
+}
+
+.tableHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.titleContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.navigation {
+  display: flex;
+  gap: 8px;
+}
+
+.navButton {
+  width: 30px;
+  height: 30px;
+  background: #e0e0e0;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.navButton img {
+  width: 16px;
+  height: 16px;
+}
+
+.navButton:hover {
+  background: #d0d0d0;
+  transform: scale(1.05);
+}
+
+.divider {
+  height: 1px;
+  background: none;
+  border-style: dashed;
+  border-width: 1px 0 0 0;
+  border-color: #d1d5db;
+  margin: 24px 0;
+}
+
+.tableContainer {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.tableContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.tableCard {
+  flex: 0 0 auto;
+  min-width: 100px;
+  background: #f3f4f6;
+  border-radius: 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 140px;
+  overflow: hidden;
+}
+
+.tableCard .level {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  padding: 10px 0;
+  color: #ffffff;
+  background: linear-gradient(180deg, #a09898 0%, #dcd9d9 100%);
+}
+
+.layoutIcons {
+  width: 45px;
+  margin: auto;
+}
+
+.percentage {
+  font-size: 14px;
+  font-weight: 700;
+  color: #9ca3af;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.amount2 {
+  margin-top: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #ffffff;
+  background: linear-gradient(180deg, #a09898 0%, #dcd9d9 100%);
+  padding: 10px 0;
+}
+
+.active {
+  background: linear-gradient(180deg, #ffeac2 0%, #fff7eb 100%);
+}
+
+.active .level {
+  background: linear-gradient(180deg, #ff9500 0%, #ffd08d 100%);
+}
+
+.active .percentage {
+  color: #000;
+}
+
+.active .amount2 {
+  background: linear-gradient(180deg, #ff9500 0%, #ffd08d 100%);
+}
+
+.locked .percentage {
+  color: #ccc;
+}
+
+.lockIcon img {
+  width: 16px;
+  height: 16px;
+}
+
+.connector {
+  width: 8px;
+  height: 2px;
+  align-self: center;
+  background: #f59e0b;
+  border-radius: 1px;
+  flex-shrink: 0;
+}

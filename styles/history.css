@@ -1,0 +1,81 @@
+.history-section {
+}
+
+.history-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.history-items {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.history-item {
+  background: #fafafae7;
+  border-radius: 16px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.history-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.history-user img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.history-user-text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.history-name {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.history-time {
+  font-size: 14px;
+  color: #666;
+}
+
+.history-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.history-amount-box {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: flex-end;
+}
+
+.history-amount {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.history-level {
+  font-size: 14px;
+  color: #666;
+}
+
+.history-status img {
+  width: 25px;
+  height: 25px;
+}

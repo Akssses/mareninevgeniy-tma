@@ -1,0 +1,36 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.userBlock {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  .headerText {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    span {
+      color: #8e8e93;
+      font-size: 12px;
+    }
+
+    h5 {
+      color: #000;
+      font-size: 14px;
+    }
+  }
+}
+
+.notificationButton {
+  border-radius: 999px;
+  padding: 10px;
+  border: 1px solid #e5e5ea;
+  display: flex;
+  justify-content: center;
+  background: none;
+}
