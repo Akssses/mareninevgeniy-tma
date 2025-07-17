@@ -11,6 +11,9 @@
 @import "./home/balance.css";
 @import "./home/transactions.css";
 
+@import "./notification-bar.css";
+@import "./notification/notification-notfound.css";
+
 .container {
   max-width: 548px;
   margin: 0 auto;
@@ -20,7 +23,7 @@
   flex-direction: column;
   gap: 30px;
   overflow-x: hidden;
-  padding-bottom: 120px;
+  padding-bottom: 100px;
 }
 
 .globalContainer {

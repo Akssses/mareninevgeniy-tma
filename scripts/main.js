@@ -15,4 +15,4 @@ const loadComponent = async (name) => {
   document.body.appendChild(script);
 };
 
-["header", "statistics", "navbar"].forEach(loadComponent);
+["header", "statistics", "navbar", "notification-bar"].forEach(loadComponent);

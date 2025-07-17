@@ -1,0 +1,41 @@
+.ntf-notfound-block {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background: #fafafac7;
+  border-radius: 20px;
+  padding: 70px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  width: calc(100% - 40px);
+
+  img {
+    position: absolute;
+    top: -40px;
+  }
+
+  h3 {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  p {
+    text-align: center;
+    color: #8e8e93;
+    font-size: 16px;
+    line-height: 140%;
+  }
+
+  a {
+    background: #ff9500;
+    border-radius: 999px;
+    padding: 18px 20px;
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+  }
+}
