@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <title>Refferals</title>
+  </head>
+  <body>
+    <main class="container">
+      <!-- Header -->
+      <div data-component="header"></div>
+
+      <!-- Statistics -->
+      <section class="sectionStatistics">
+        <h2 class="title">Статистика</h2>
+        <div class="slider">
+          <!-- Карточка 1 -->
+          <div class="card">
+            <div class="cardHeader">
+              <div class="iconContainer">
+                <img
+                  src="./assets/icons/userIcon.svg"
+                  alt="Вся команда"
+                  class="icon"
+                />
+              </div>
+              <div class="infoHeader">
+                <span class="cardTitle">Вся команда</span>
+                <span class="amount">$4,320.00</span>
+              </div>
+            </div>
+            <div class="cardFooter">
+              <div class="change positive">
+                2.5%
+                <img
+                  src="./assets/icons/upArrow.svg"
+                  alt="↑"
+                  class="trendIcon"
+                />
+              </div>
+              <span class="period">7 дней</span>
+            </div>
+          </div>
+
+          <!-- Карточка 2 -->
+          <div class="card">
+            <div class="cardHeader">
+              <div class="iconContainer">
+                <img
+                  src="./assets/icons/userIcon.svg"
+                  alt="Вся команда"
+                  class="icon"
+                />
+              </div>
+              <div class="infoHeader">
+                <span class="cardTitle">Вся команда</span>
+                <span class="amount">$4,320.00</span>
+              </div>
+            </div>
+            <div class="cardFooter">
+              <div class="change positive">
+                2.5%
+                <img
+                  src="./assets/icons/upArrow.svg"
+                  alt="↑"
+                  class="trendIcon"
+                />
+              </div>
+              <span class="period">7 дней</span>
+            </div>
+          </div>
+
+          <!-- Карточка 3 -->
+          <div class="card">
+            <div class="cardHeader">
+              <div class="iconContainer">
+                <img
+                  src="./assets/icons/markIcon.svg"
+                  alt="Прямые ре..."
+                  class="icon"
+                />
+              </div>
+              <div class="infoHeader">
+                <span class="cardTitle">Прямые ре...</span>
+                <span class="amount">$4,320.00</span>
+              </div>
+            </div>
+            <div class="cardFooter">
+              <div class="change negative">
+                2.5%
+                <img
+                  src="./assets/icons/downArrow.svg"
+                  alt="↓"
+                  class="trendIcon"
+                />
+              </div>
+              <span class="period">4 дня</span>
+            </div>
+          </div>
+
+          <!-- Карточка 4 -->
+          <div class="card">
+            <div class="cardHeader">
+              <div class="iconContainer">
+                <img
+                  src="./assets/icons/idCardIcon.svg"
+                  alt="Объем ком..."
+                  class="icon"
+                />
+              </div>
+              <div class="infoHeader">
+                <span class="cardTitle">Объем ком...</span>
+                <span class="amount">$4,320.00</span>
+              </div>
+            </div>
+            <div class="cardFooter">
+              <div class="change positive">
+                2.5%
+                <img
+                  src="./assets/icons/upArrow.svg"
+                  alt="↑"
+                  class="trendIcon"
+                />
+              </div>
+              <span class="period">7 дней</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Rewards -->
+      <section class="sectionRewards">
+        <!-- Header -->
+        <div class="header">
+          <div class="titleContainer">
+            <img src="./assets/icons/trophy.svg" alt="Трофей" />
+            <h2 class="title">Получить награду</h2>
+          </div>
+          <div class="infoIcon">
+            <img src="./assets/icons/warning.svg" alt="Инфо" />
+          </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="buttons">
+          <button>Получить сейчас</button>
+          <button>Увеличить награду</button>
+        </div>
+
+        <!-- Divider -->
+        <div class="divider"></div>
+
+        <!-- Next reward block -->
+        <div class="nextReward">
+          <h3 class="nextRewardTitle">До следующей награды осталось</h3>
+
+          <div class="rewardInfo">
+            <div class="timeContainer">
+              <div class="timeIcon">
+                <img src="./assets/icons/time.svg" alt="Время" />
+              </div>
+              <span class="timeText">5д : 4ч : 3м</span>
+            </div>
+
+            <div class="amountContainer">
+              <div class="dollarIcon">
+                <img src="./assets/icons/dollar.svg" alt="Сумма" />
+              </div>
+              <span class="amountText">$20.00</span>
+            </div>
+          </div>
+
+          <div class="progressBar">
+            <div class="progressFill"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Refferal Table -->
+      <section class="sectionTable">
+        <!-- Header -->
+        <div class="tableHeader">
+          <div class="titleContainer">
+            <img src="./assets/icons/tableIcon.svg" alt="Таблица" />
+            <h2 class="title">Таблица рефералов</h2>
+          </div>
+          <div class="navigation">
+            <button class="navButton" onclick="scrollLeft()">
+              <img src="./assets/icons/arrowLeft.svg" alt="←" />
+            </button>
+            <button class="navButton" onclick="scrollRight()">
+              <img src="./assets/icons/arrowRight.svg" alt="→" />
+            </button>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Scrollable Table -->
+        <div class="tableContainer" id="referralScroll">
+          <!-- Static card -->
+          <div class="tableCard">
+            <img
+              class="layoutIcons"
+              src="./assets/icons/layoutIcons.svg"
+              alt="Иконка оборота"
+            />
+            <div class="amount2">Оборот</div>
+          </div>
+          <div class="connector"></div>
+
+          <!-- Card 1 -->
+          <div class="tableCard active">
+            <div class="level">Уровень 1</div>
+            <div class="percentage">3%</div>
+            <div class="amount2">$5,000</div>
+          </div>
+          <div class="connector"></div>
+
+          <!-- Card 2 -->
+          <div class="tableCard">
+            <div class="level">Уровень 2</div>
+            <div class="percentage">4%</div>
+            <div class="amount2">$10,000</div>
+          </div>
+          <div class="connector"></div>
+
+          <!-- Card 3 -->
+          <div class="tableCard locked">
+            <div class="level">Уровень 3</div>
+            <div class="percentage">
+              <span class="lockIcon">
+                <img src="./assets/icons/lockIcon.svg" alt="Закрыто" />
+              </span>
+            </div>
+            <div class="amount2">$20,000</div>
+          </div>
+          <div class="connector"></div>
+
+          <!-- Card 4 -->
+          <div class="tableCard locked">
+            <div class="level">Уровень 4</div>
+            <div class="percentage">
+              <span class="lockIcon">
+                <img src="./assets/icons/lockIcon.svg" alt="Закрыто" />
+              </span>
+            </div>
+            <div class="amount2">$40,000</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- History -->
+      <section class="history-section">
+        <h1 class="history-title">История обращений</h1>
+
+        <div class="history-items">
+          <div class="history-item">
+            <div class="history-user">
+              <img src="./assets/images/vitalyi.png" alt="Виталий" />
+              <div class="history-user-text">
+                <span class="history-name">Виталий</span>
+                <span class="history-time">Сегодня 13:00</span>
+              </div>
+            </div>
+
+            <div class="history-right">
+              <div class="history-amount-box">
+                <span class="history-amount">+$100.00</span>
+                <span class="history-level">Уровень 11</span>
+              </div>
+              <span class="history-status">
+                <img src="./assets/icons/check-green.svg" alt="✓" />
+              </span>
+            </div>
+          </div>
+
+          <div class="history-item">
+            <div class="history-user">
+              <img src="./assets/images/vitalyi.png" alt="Виталий" />
+              <div class="history-user-text">
+                <span class="history-name">Виталий</span>
+                <span class="history-time">Сегодня 13:00</span>
+              </div>
+            </div>
+
+            <div class="history-right">
+              <div class="history-amount-box">
+                <span class="history-amount">+$100.00</span>
+                <span class="history-level">Уровень 11</span>
+              </div>
+              <span class="history-status">
+                <img src="./assets/icons/check-red.svg" alt="✗" />
+              </span>
+            </div>
+          </div>
+
+          <div class="history-item">
+            <div class="history-user">
+              <img src="./assets/images/vitalyi.png" alt="Виталий" />
+              <div class="history-user-text">
+                <span class="history-name">Виталий</span>
+                <span class="history-time">Сегодня 13:00</span>
+              </div>
+            </div>
+
+            <div class="history-right">
+              <div class="history-amount-box">
+                <span class="history-amount">+$100.00</span>
+                <span class="history-level">Уровень 11</span>
+              </div>
+              <span class="history-status">
+                <img src="./assets/icons/check-green.svg" alt="✓" />
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Navbar -->
+      <div data-component="navbar"></div>
+    </main>
+
+    <!-- Circles -->
+    <div class="circles">
+      <img class="ellipse" src="./assets/images/ellipse.svg" alt="" />
+      <img class="circle1" src="./assets/images/circle1.png" alt="" />
+      <img class="circle2" src="./assets/images/circle2.png" alt="" />
+      <img class="circle3" src="./assets/images/circle3.png" alt="" />
+      <img class="circle4" src="./assets/images/circle4.png" alt="" />
+    </div>
+
+    <script type="module" src="./scripts/main.js"></script>
+  </body>
+</html>

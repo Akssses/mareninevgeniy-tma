@@ -4,361 +4,145 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/main.css" />
-    <title>Document</title>
+    <title>Home Page</title>
   </head>
   <body>
     <main class="container">
       <!-- Header -->
-      <header class="header">
-        <div class="userBlock">
-          <img src="./assets/icons/avatars.svg" alt="" />
-          <div class="headerText">
-            <span>Добро пожаловать</span>
-            <h5>Егор Климов</h5>
+      <div data-component="header"></div>
+
+      <!-- Stories Section -->
+      <section class="stories">
+        <div>
+          <img src="/assets/images/stories1.png" alt="" /><span>Crypto 1</span>
+        </div>
+        <div>
+          <img src="/assets/images/stories2.png" alt="" /><span>Crypto 2</span>
+        </div>
+        <div>
+          <img src="/assets/images/stories3.png" alt="" /><span>Crypto 3</span>
+        </div>
+        <div>
+          <img src="/assets/images/stories4.png" alt="" /><span>Crypto 4</span>
+        </div>
+        <div>
+          <img src="/assets/images/stories5.png" alt="" /><span>Crypto 5</span>
+        </div>
+      </section>
+
+      <!-- Balance Section -->
+      <section class="balance">
+        <div class="balanceBlock">
+          <span>Общий баланс</span>
+          <h4>$16,500.80</h4>
+          <img
+            class="balanceElipce"
+            src="/assets/images/balanceElipce.svg"
+            alt=""
+          />
+        </div>
+        <div class="balanceDetails">
+          <div>
+            <span>Инвестировано</span>
+            <h5>$1,450,37</h5>
+          </div>
+          <span class="line"></span>
+          <div>
+            <span>Инвестировано</span>
+            <h5>$1,450,37</h5>
+          </div>
+          <span class="line"></span>
+          <div>
+            <span>Заработано</span>
+            <h5>$1,450,37</h5>
           </div>
         </div>
-        <button class="notificationButton">
-          <img src="./assets/icons/notification.svg" alt="notification" />
+      </section>
+      <div class="cryptoBalances">
+        <div class="card">
+          <div class="cardHeader">
+            <div class="eth">
+              <img src="/assets/icons/eth.svg" alt="ETH" />
+              <span>ETH</span>
+            </div>
+            <div class="percentage">
+              <span>2.5%</span><img src="/assets/icons/upArrow.svg" alt="" />
+            </div>
+          </div>
+          <div class="balanceAmount">
+            <h5>$12,250.00</h5>
+            <span>$1,120.28</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="cardHeader">
+            <div class="eth">
+              <img src="/assets/icons/btc.svg" alt="ETH" />
+              <span>BTC</span>
+            </div>
+            <div class="percentage">
+              <span>2.5%</span><img src="/assets/icons/downArrow.svg" alt="" />
+            </div>
+          </div>
+          <div class="balanceAmount">
+            <h5>$12,250.00</h5>
+            <span>$1,120.28</span>
+          </div>
+        </div>
+      </div>
+      <div class="actionButtons">
+        <button>
+          <img src="/assets/icons/внести.svg" alt="" /><span>Внести</span>
         </button>
-      </header>
+        <button>
+          <img src="/assets/icons/вывести.svg" alt="" /><span>Вывести</span>
+        </button>
+        <button>
+          <img src="/assets/icons/обмен.svg" alt="" /><span>Обмен</span>
+        </button>
+      </div>
 
-      <!-- Statistics -->
-      <section class="sectionStatistics">
-        <h2 class="title">Статистика</h2>
-        <div class="slider">
-          <!-- Карточка 1 -->
-          <div class="card">
-            <div class="cardHeader">
-              <div class="iconContainer">
-                <img
-                  src="./assets/icons/userIcon.svg"
-                  alt="Вся команда"
-                  class="icon"
-                />
-              </div>
-              <div class="infoHeader">
-                <span class="cardTitle">Вся команда</span>
-                <span class="amount">$4,320.00</span>
-              </div>
-            </div>
-            <div class="cardFooter">
-              <div class="change positive">
-                2.5%
-                <img
-                  src="./assets/icons/upArrow.svg"
-                  alt="↑"
-                  class="trendIcon"
-                />
-              </div>
-              <span class="period">7 дней</span>
-            </div>
+      <!-- Transactions Section -->
+      <section class="transactions">
+        <h4>Переводы</h4>
+        <div class="dashed"></div>
+        <div class="transactionList">
+          <div class="addTransaction">
+            <img src="/assets/icons/plus.svg" alt="" />
           </div>
-
-          <!-- Карточка 2 -->
-          <div class="card">
-            <div class="cardHeader">
-              <div class="iconContainer">
-                <img
-                  src="./assets/icons/userIcon.svg"
-                  alt="Вся команда"
-                  class="icon"
-                />
-              </div>
-              <div class="infoHeader">
-                <span class="cardTitle">Вся команда</span>
-                <span class="amount">$4,320.00</span>
-              </div>
-            </div>
-            <div class="cardFooter">
-              <div class="change positive">
-                2.5%
-                <img
-                  src="./assets/icons/upArrow.svg"
-                  alt="↑"
-                  class="trendIcon"
-                />
-              </div>
-              <span class="period">7 дней</span>
-            </div>
+          <div class="transactionItem">
+            <img src="/assets/images/vitaly2.png" alt="" />
+            <span>Виталий</span>
+            <p>Уровень 11</p>
           </div>
-
-          <!-- Карточка 3 -->
-          <div class="card">
-            <div class="cardHeader">
-              <div class="iconContainer">
-                <img
-                  src="./assets/icons/markIcon.svg"
-                  alt="Прямые ре..."
-                  class="icon"
-                />
-              </div>
-              <div class="infoHeader">
-                <span class="cardTitle">Прямые ре...</span>
-                <span class="amount">$4,320.00</span>
-              </div>
-            </div>
-            <div class="cardFooter">
-              <div class="change negative">
-                2.5%
-                <img
-                  src="./assets/icons/downArrow.svg"
-                  alt="↓"
-                  class="trendIcon"
-                />
-              </div>
-              <span class="period">4 дня</span>
-            </div>
+          <div class="transactionItem">
+            <img src="/assets/images/vitaly2.png" alt="" />
+            <span>Виталий</span>
+            <p>Уровень 11</p>
           </div>
-
-          <!-- Карточка 4 -->
-          <div class="card">
-            <div class="cardHeader">
-              <div class="iconContainer">
-                <img
-                  src="./assets/icons/idCardIcon.svg"
-                  alt="Объем ком..."
-                  class="icon"
-                />
-              </div>
-              <div class="infoHeader">
-                <span class="cardTitle">Объем ком...</span>
-                <span class="amount">$4,320.00</span>
-              </div>
-            </div>
-            <div class="cardFooter">
-              <div class="change positive">
-                2.5%
-                <img
-                  src="./assets/icons/upArrow.svg"
-                  alt="↑"
-                  class="trendIcon"
-                />
-              </div>
-              <span class="period">7 дней</span>
-            </div>
+          <div class="transactionItem">
+            <img src="/assets/images/vitaly2.png" alt="" />
+            <span>Виталий</span>
+            <p>Уровень 11</p>
+          </div>
+          <div class="transactionItem">
+            <img src="/assets/images/vitaly2.png" alt="" />
+            <span>Виталий</span>
+            <p>Уровень 11</p>
+          </div>
+          <div class="transactionItem">
+            <img src="/assets/images/vitaly2.png" alt="" />
+            <span>Виталий</span>
+            <p>Уровень 11</p>
           </div>
         </div>
       </section>
 
-      <!-- Rewards -->
-      <section class="sectionRewards">
-        <!-- Header -->
-        <div class="header">
-          <div class="titleContainer">
-            <img src="./assets/icons/trophy.svg" alt="Трофей" />
-            <h2 class="title">Получить награду</h2>
-          </div>
-          <div class="infoIcon">
-            <img src="./assets/icons/warning.svg" alt="Инфо" />
-          </div>
-        </div>
-
-        <!-- Buttons -->
-        <div class="buttons">
-          <button>Получить сейчас</button>
-          <button>Увеличить награду</button>
-        </div>
-
-        <!-- Divider -->
-        <div class="divider"></div>
-
-        <!-- Next reward block -->
-        <div class="nextReward">
-          <h3 class="nextRewardTitle">До следующей награды осталось</h3>
-
-          <div class="rewardInfo">
-            <div class="timeContainer">
-              <div class="timeIcon">
-                <img src="./assets/icons/time.svg" alt="Время" />
-              </div>
-              <span class="timeText">5д : 4ч : 3м</span>
-            </div>
-
-            <div class="amountContainer">
-              <div class="dollarIcon">
-                <img src="./assets/icons/dollar.svg" alt="Сумма" />
-              </div>
-              <span class="amountText">$20.00</span>
-            </div>
-          </div>
-
-          <div class="progressBar">
-            <div class="progressFill"></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Refferal Table -->
-      <section class="sectionTable">
-        <!-- Header -->
-        <div class="tableHeader">
-          <div class="titleContainer">
-            <img src="./assets/icons/tableIcon.svg" alt="Таблица" />
-            <h2 class="title">Таблица рефералов</h2>
-          </div>
-          <div class="navigation">
-            <button class="navButton" onclick="scrollLeft()">
-              <img src="./assets/icons/arrowLeft.svg" alt="←" />
-            </button>
-            <button class="navButton" onclick="scrollRight()">
-              <img src="./assets/icons/arrowRight.svg" alt="→" />
-            </button>
-          </div>
-        </div>
-
-        <div class="divider"></div>
-
-        <!-- Scrollable Table -->
-        <div class="tableContainer" id="referralScroll">
-          <!-- Static card -->
-          <div class="tableCard">
-            <img
-              class="layoutIcons"
-              src="./assets/icons/layoutIcons.svg"
-              alt="Иконка оборота"
-            />
-            <div class="amount2">Оборот</div>
-          </div>
-          <div class="connector"></div>
-
-          <!-- Card 1 -->
-          <div class="tableCard active">
-            <div class="level">Уровень 1</div>
-            <div class="percentage">3%</div>
-            <div class="amount2">$5,000</div>
-          </div>
-          <div class="connector"></div>
-
-          <!-- Card 2 -->
-          <div class="tableCard">
-            <div class="level">Уровень 2</div>
-            <div class="percentage">4%</div>
-            <div class="amount2">$10,000</div>
-          </div>
-          <div class="connector"></div>
-
-          <!-- Card 3 -->
-          <div class="tableCard locked">
-            <div class="level">Уровень 3</div>
-            <div class="percentage">
-              <span class="lockIcon">
-                <img src="./assets/icons/lockIcon.svg" alt="Закрыто" />
-              </span>
-            </div>
-            <div class="amount2">$20,000</div>
-          </div>
-          <div class="connector"></div>
-
-          <!-- Card 4 -->
-          <div class="tableCard locked">
-            <div class="level">Уровень 4</div>
-            <div class="percentage">
-              <span class="lockIcon">
-                <img src="./assets/icons/lockIcon.svg" alt="Закрыто" />
-              </span>
-            </div>
-            <div class="amount2">$40,000</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- History -->
-      <section class="history-section">
-        <h1 class="history-title">История обращений</h1>
-
-        <div class="history-items">
-          <div class="history-item">
-            <div class="history-user">
-              <img src="./assets/images/vitalyi.png" alt="Виталий" />
-              <div class="history-user-text">
-                <span class="history-name">Виталий</span>
-                <span class="history-time">Сегодня 13:00</span>
-              </div>
-            </div>
-
-            <div class="history-right">
-              <div class="history-amount-box">
-                <span class="history-amount">+$100.00</span>
-                <span class="history-level">Уровень 11</span>
-              </div>
-              <span class="history-status">
-                <img src="./assets/icons/check-green.svg" alt="✓" />
-              </span>
-            </div>
-          </div>
-
-          <div class="history-item">
-            <div class="history-user">
-              <img src="./assets/images/vitalyi.png" alt="Виталий" />
-              <div class="history-user-text">
-                <span class="history-name">Виталий</span>
-                <span class="history-time">Сегодня 13:00</span>
-              </div>
-            </div>
-
-            <div class="history-right">
-              <div class="history-amount-box">
-                <span class="history-amount">+$100.00</span>
-                <span class="history-level">Уровень 11</span>
-              </div>
-              <span class="history-status">
-                <img src="./assets/icons/check-red.svg" alt="✗" />
-              </span>
-            </div>
-          </div>
-
-          <div class="history-item">
-            <div class="history-user">
-              <img src="./assets/images/vitalyi.png" alt="Виталий" />
-              <div class="history-user-text">
-                <span class="history-name">Виталий</span>
-                <span class="history-time">Сегодня 13:00</span>
-              </div>
-            </div>
-
-            <div class="history-right">
-              <div class="history-amount-box">
-                <span class="history-amount">+$100.00</span>
-                <span class="history-level">Уровень 11</span>
-              </div>
-              <span class="history-status">
-                <img src="./assets/icons/check-green.svg" alt="✓" />
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
+      <div data-component="statistics"></div>
 
       <!-- Navbar -->
-      <section class="navbar-container">
-        <nav>
-          <ul class="navbar-list">
-            <li>
-              <button>
-                <img src="./assets/icons/home.svg" alt="home" />
-              </button>
-            </li>
-            <li>
-              <button>
-                <img src="./assets/icons/tiime.svg" alt="tiime" />
-              </button>
-            </li>
-            <li class="navbar-bank">Банк</li>
-            <li>
-              <button class="navbar-circle">
-                <img src="./assets/icons/circle.svg" alt="circle" />
-              </button>
-            </li>
-            <li>
-              <button>
-                <img src="./assets/icons/main.svg" alt="main" />
-              </button>
-            </li>
-          </ul>
-        </nav>
-      </section>
+      <div data-component="navbar"></div>
     </main>
-
     <!-- Circles -->
     <div class="circles">
       <img class="ellipse" src="./assets/images/ellipse.svg" alt="" />
@@ -367,5 +151,6 @@
       <img class="circle3" src="./assets/images/circle3.png" alt="" />
       <img class="circle4" src="./assets/images/circle4.png" alt="" />
     </div>
+    <script type="module" src="./scripts/main.js"></script>
   </body>
 </html>

@@ -1,0 +1,63 @@
+.transactions {
+  background: #f1f1f1a6;
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  h4 {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 20px 0 0 20px;
+  }
+
+  .dashed {
+    height: 100%;
+    min-width: 1px;
+    border: 1px dashed #e5e5ea;
+  }
+
+  .transactionList {
+    display: flex;
+    align-items: start;
+    gap: 25px;
+    overflow-x: scroll;
+    padding: 0px 0px 20px 20px;
+
+    .addTransaction {
+      background: #f2f2f7;
+      min-width: 55px;
+      height: 55px;
+      border-radius: 20px;
+      border: 1px dashed #d1d1d6;
+      display: flex;
+      justify-content: center;
+
+      img {
+        width: 20px;
+      }
+    }
+
+    .transactionItem {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      span {
+        font-size: 14px;
+        margin-top: 5px;
+      }
+
+      p {
+        color: #8e8e93;
+        font-size: 10px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.transactionList::-webkit-scrollbar {
+  display: none;
+}

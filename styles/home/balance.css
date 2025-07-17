@@ -1,0 +1,145 @@
+.balance {
+  background: #f1f1f1a6;
+  border-radius: 20px;
+  border: 1px solid #fae3d7;
+  overflow: hidden;
+}
+
+.balanceBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 30px 20px;
+  background: #000000;
+  border-radius: 0 0 25px 25px;
+  position: relative;
+  overflow: hidden;
+
+  span {
+    font-size: 14px;
+    color: #8e8e93;
+  }
+
+  h4 {
+    font-size: 34px;
+    color: #fff;
+  }
+
+  .balanceElipce {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+  }
+}
+
+.balanceDetails {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 20px;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    h5 {
+      font-size: 16px;
+      color: #000000;
+    }
+
+    span {
+      font-size: 14px;
+      color: #8e8e93;
+    }
+  }
+}
+
+.line {
+  width: 1px;
+  height: 30px;
+  background: #e5e5ea;
+}
+
+.cryptoBalances {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+
+  .card {
+    background: #f1f1f1a6;
+    min-width: 49%;
+    margin-bottom: 0;
+
+    .cardHeader {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .percentage {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        background: #fff;
+        border-radius: 999px;
+        border: 1px solid #fae3d7;
+        padding: 5px;
+        max-width: 70px;
+
+        span {
+          color: #000000;
+        }
+      }
+
+      .eth {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        span {
+          font-size: 14px;
+          color: #000000;
+          font-weight: 600;
+        }
+      }
+    }
+
+    .balanceAmount {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      h5 {
+        font-size: 20px;
+      }
+
+      span {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.actionButtons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+
+  button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: #000000;
+    color: #fff;
+    border-radius: 999px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    padding: 15px 20px;
+    width: 100%;
+  }
+}
