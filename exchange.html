@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <title>Example</title>
+  </head>
+  <body>
+    <main class="container">
+      <!-- Header -->
+      <div class="header">
+        <div class="back-btn">
+          <img src="/assets/icons/arrowLeft.svg" alt="" />
+        </div>
+        <div class="header-title">Обмен</div>
+        <div class="notification-btn">
+          <img src="/assets/icons/notification.svg" alt="" />
+        </div>
+      </div>
+
+      <!-- Exchange section -->
+      <div class="exchange-section">
+        <!-- Bitcoin card -->
+        <div class="exchange-card">
+          <div class="card-header">
+            <div class="crypto-info">
+              <div class="crypto-icon bitcoin-icon">
+                <img src="/assets/icons/btc.svg" alt="" />
+              </div>
+              <div class="crypto-name">
+                Bitcoin
+                <span class="dropdown-arrow"
+                  ><img src="/assets/icons/arrowdown.svg" alt=""
+                /></span>
+              </div>
+            </div>
+            <button class="action-btn send-btn">Отправить</button>
+          </div>
+          <div class="amount3">0,5432</div>
+          <div class="balances">Баланс: 25,86.00</div>
+          <!-- Swap button -->
+          <div class="swap-button">
+            <button class="swap-btn">⇅</button>
+          </div>
+        </div>
+
+        <!-- Ethereum card -->
+        <div class="exchange-card">
+          <div class="card-header">
+            <div class="crypto-info">
+              <div class="crypto-icon ethereum-icon">
+                <img src="/assets/icons/eth.svg" alt="" />
+              </div>
+              <div class="crypto-name">
+                Ethereum
+                <span class="dropdown-arrow"
+                  ><img src="/assets/icons/arrowdown.svg" alt=""
+                /></span>
+              </div>
+            </div>
+            <button class="action-btn receive-btn">Получить</button>
+          </div>
+          <div class="amount3">0,120</div>
+          <div class="balances">Баланс: 30,49.00</div>
+        </div>
+      </div>
+
+      <!-- Exchange rate -->
+      <div class="exchange-rate">
+        <div class="rate-label">Ставка</div>
+        <div class="rate-value">1BTC = 0,065 ETH</div>
+      </div>
+
+      <!-- Continue button -->
+      <div class="continue-section">
+        <button class="continue-btn">Продолжать</button>
+      </div>
+
+      <!-- Navbar -->
+      <div data-component="navbar"></div>
+    </main>
+  </body>
+
+  <!-- Circles -->
+  <div class="circles">
+    <img class="ellipse" src="./assets/images/ellipse.svg" alt="" />
+    <img class="circle1" src="./assets/images/circle1.png" alt="" />
+    <img class="circle2" src="./assets/images/circle2.png" alt="" />
+    <img class="circle3" src="./assets/images/circle3.png" alt="" />
+    <img class="circle4" src="./assets/images/circle4.png" alt="" />
+  </div>
+
+  <script type="module" src="./scripts/main.js"></script>
+</html>

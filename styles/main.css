@@ -16,6 +16,7 @@
 @import "./notification/notification.css";
 
 @import "./transactionPage.css";
+@import "./exchange.css";
 
 .container {
   max-width: 548px;
