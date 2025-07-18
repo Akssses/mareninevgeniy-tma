@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <title>Crypto Story</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+
+      <div class="content">
+        <div class="avatar">
+          <img src="/assets/images/stories1.png" alt="" />
+        </div>
+        <div class="info">
+          <div class="storyTitle">Crypto</div>
+          <div class="date">22.06.2025</div>
+        </div>
+        <div class="close-btn" onclick="closeStory()"></div>
+      </div>
+
+      <button class="moreBtn">Подробнее</button>
+    </div>
+
+    <script>
+      const fill = document.getElementById("progress-fill");
+      let duration = 10000; // 10 секунд
+      let progressTimeout;
+
+      function startProgress() {
+        fill.style.width = "0%";
+
+        setTimeout(() => {
+          fill.style.width = "100%";
+        }, 50);
+
+        progressTimeout = setTimeout(() => {
+          redirectToHome();
+        }, duration);
+      }
+
+      function redirectToHome() {
+        window.location.href = "index.html";
+      }
+
+      function closeStory() {
+        clearTimeout(progressTimeout);
+        redirectToHome();
+      }
+
+      window.addEventListener("load", startProgress);
+    </script>
+  </body>
+</html>

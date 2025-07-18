@@ -13,6 +13,26 @@ const loadComponent = async (name) => {
   const script = document.createElement("script");
   script.src = `../components/${name}/${name}.js`;
   document.body.appendChild(script);
+
+  // После загрузки navbar вызываем подсветку активной кнопки
+  if (name === "navbar") {
+    highlightActiveNavbarItem();
+  }
 };
 
 ["header", "statistics", "navbar", "notification-bar"].forEach(loadComponent);
+
+// 🔥 Подсветка активной кнопки в navbar
+const highlightActiveNavbarItem = () => {
+  const currentFile = window.location.pathname.split("/").pop(); // например: index.html
+
+  const links = document.querySelectorAll(".navbar-container .link");
+  links.forEach((link) => {
+    const hrefFile = link.getAttribute("href").split("/").pop();
+    if (hrefFile === currentFile) {
+      link.classList.add("link-active");
+    } else {
+      link.classList.remove("link-active");
+    }
+  });
+};

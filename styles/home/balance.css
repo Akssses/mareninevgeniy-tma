@@ -3,6 +3,7 @@
   border-radius: 20px;
   border: 1px solid #fae3d7;
   overflow: hidden;
+  margin: 0 20px;
 }
 
 .balanceBlock {
@@ -48,6 +49,7 @@
     h5 {
       font-size: 16px;
       color: #000000;
+      font-weight: 400;
     }
 
     span {
@@ -132,7 +134,8 @@
   button {
     display: flex;
     align-items: center;
-    gap: 5px;
+    justify-content: center;
+    gap: 10px;
     background: #000000;
     color: #fff;
     border-radius: 999px;

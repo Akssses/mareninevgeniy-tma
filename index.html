@@ -7,23 +7,29 @@
     <title>Home Page</title>
   </head>
   <body>
-    <main class="container">
+    <main class="homePage">
       <!-- Header -->
-      <div data-component="header"></div>
+      <div class="container2" data-component="header"></div>
 
       <!-- Stories Section -->
       <section class="stories">
-        <div>
+        <div onclick="openStory(1)">
           <img src="/assets/images/stories1.png" alt="" /><span>Crypto 1</span>
         </div>
-        <div>
+        <div onclick="openStory(1)">
           <img src="/assets/images/stories2.png" alt="" /><span>Crypto 2</span>
         </div>
-        <div>
+        <div onclick="openStory(1)">
           <img src="/assets/images/stories3.png" alt="" /><span>Crypto 3</span>
         </div>
         <div>
           <img src="/assets/images/stories4.png" alt="" /><span>Crypto 4</span>
+        </div>
+        <div>
+          <img src="/assets/images/stories5.png" alt="" /><span>Crypto 5</span>
+        </div>
+        <div>
+          <img src="/assets/images/stories5.png" alt="" /><span>Crypto 5</span>
         </div>
         <div>
           <img src="/assets/images/stories5.png" alt="" /><span>Crypto 5</span>
@@ -58,7 +64,7 @@
           </div>
         </div>
       </section>
-      <div class="cryptoBalances">
+      <div class="cryptoBalances container2">
         <div class="card">
           <div class="cardHeader">
             <div class="eth">
@@ -90,7 +96,7 @@
           </div>
         </div>
       </div>
-      <div class="actionButtons">
+      <div class="actionButtons container2">
         <button>
           <img src="/assets/icons/внести.svg" alt="" /><span>Внести</span>
         </button>
@@ -138,10 +144,10 @@
         </div>
       </section>
 
-      <div data-component="statistics"></div>
+      <div class="container2" data-component="statistics"></div>
 
       <!-- Navbar -->
-      <div data-component="navbar"></div>
+      <div class="container2" data-component="navbar"></div>
     </main>
     <!-- Circles -->
     <div class="circles">
@@ -151,6 +157,11 @@
       <img class="circle3" src="./assets/images/circle3.png" alt="" />
       <img class="circle4" src="./assets/images/circle4.png" alt="" />
     </div>
+    <script>
+      function openStory(id) {
+        window.location.href = `story.html?story=${id}`;
+      }
+    </script>
     <script type="module" src="./scripts/main.js"></script>
   </body>
 </html>

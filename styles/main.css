@@ -18,6 +18,7 @@
 @import "./transactionPage.css";
 @import "./exchange.css";
 @import "./status-pages.css";
+@import "./story.css";
 
 .container {
   max-width: 548px;
@@ -29,6 +30,10 @@
   gap: 30px;
   overflow-x: hidden;
   padding-bottom: 100px;
+}
+
+.container2 {
+  padding: 0 20px;
 }
 
 .globalContainer {
@@ -43,6 +48,8 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  padding: 20px 0;
+  padding-bottom: 90px;
 }
 
 * {
