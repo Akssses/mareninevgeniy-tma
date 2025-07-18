@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <title>Transaction</title>
+  </head>
+  <body>
+    <main class="container">
+      <div class="trPageHeader">
+        <h2 class="page-title">Транзакции</h2>
+        <button>
+          Все
+          <img src="/assets/icons/arrowdown.svg" alt="" />
+        </button>
+      </div>
+      <div class="filter-dropdown hidden">
+        <button data-type="all" class="dropdown-active">Все</button>
+        <button data-type="deposit">Депозиты</button>
+        <button data-type="conversion">Конверсия</button>
+        <button data-type="withdraw">Вывод</button>
+      </div>
+
+      <div class="transaction-wrapper">
+        <!-- Раскрытая транзакция -->
+        <div class="transaction-card open">
+          <div class="transaction-header">
+            <div class="icon blue">
+              <img src="./assets/icons/wallet.svg" alt="" />
+            </div>
+            <div class="info">
+              <p class="title">Пополнить</p>
+              <span>Сегодня 13:00</span>
+            </div>
+            <div class="amount">
+              <div>
+                <span>+$100.00</span>
+                <p>Депозит</p>
+              </div>
+              <img src="/assets/icons/arrowdown.svg" alt="" />
+            </div>
+          </div>
+
+          <div class="transaction-body">
+            <div class="row">
+              <span>Количество</span>
+              <p class="success">+0.3</p>
+            </div>
+            <div class="row">
+              <span>Дата</span>
+              <p>2025-06-16 18:45</p>
+            </div>
+            <div class="row">
+              <span>Назначения</span>
+              <p>Кредит завершен</p>
+            </div>
+            <div class="row">
+              <span>Txid</span>
+              <p>#478</p>
+            </div>
+            <div class="row">
+              <span>Детали</span>
+              <p>Мини</p>
+            </div>
+            <div class="row">
+              <span>Статус</span>
+              <p class="badge">Завершено</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Остальные карточки -->
+        <div class="transaction-card">
+          <div class="transaction-header">
+            <div class="icon red">
+              <img src="./assets/icons/send.svg" alt="" />
+            </div>
+            <div class="info">
+              <p class="title">Отправить</p>
+              <span>Сегодня 13:00</span>
+            </div>
+            <div class="amount">
+              <div>
+                <span>-$100.00</span>
+                <p>Отзывать</p>
+              </div>
+              <img src="/assets/icons/arrowdown.svg" alt="" />
+            </div>
+          </div>
+        </div>
+
+        <div class="transaction-card">
+          <div class="transaction-header">
+            <div class="icon blue">
+              <img src="./assets/icons/depositIcon.svg" alt="" />
+            </div>
+            <div class="info">
+              <p class="title">Пополнить</p>
+              <span>Сегодня 13:00</span>
+            </div>
+            <div class="amount">
+              <div>
+                <span>-$100.00</span>
+                <p>Депозит</p>
+              </div>
+              <img src="/assets/icons/arrowdown.svg" alt="" />
+            </div>
+          </div>
+        </div>
+
+        <div class="transaction-card">
+          <div class="transaction-header">
+            <div class="icon green">
+              <img src="./assets/icons/receiveIcon.svg" alt="" />
+            </div>
+            <div class="info">
+              <p class="title">Получить</p>
+              <span>Сегодня 13:00</span>
+            </div>
+            <div class="amount">
+              <div>
+                <span>+$100.00</span>
+                <p>Отзывать</p>
+              </div>
+              <img src="/assets/icons/arrowdown.svg" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Navbar -->
+      <div data-component="navbar"></div>
+    </main>
+
+    <!-- Circles -->
+    <div class="circles">
+      <img class="ellipse" src="./assets/images/ellipse.svg" alt="" />
+      <img class="circle1" src="./assets/images/circle1.png" alt="" />
+      <img class="circle2" src="./assets/images/circle2.png" alt="" />
+      <img class="circle3" src="./assets/images/circle3.png" alt="" />
+      <img class="circle4" src="./assets/images/circle4.png" alt="" />
+    </div>
+
+    <script type="module" src="./scripts/main.js"></script>
+    <script>
+      const filterButton = document.querySelector(".trPageHeader button");
+      const dropdown = document.querySelector(".filter-dropdown");
+
+      filterButton.addEventListener("click", () => {
+        dropdown.classList.toggle("hidden");
+      });
+
+      // Закрытие по клику вне
+      document.addEventListener("click", (e) => {
+        if (!filterButton.contains(e.target) && !dropdown.contains(e.target)) {
+          dropdown.classList.add("hidden");
+        }
+      });
+
+      // Поведение по клику на опцию (можно заменить на фильтрацию)
+      dropdown.querySelectorAll("button").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const label = btn.textContent;
+          filterButton.innerHTML = `${label} <img src="/assets/icons/arrowdown.svg" alt="" />`;
+          dropdown.classList.add("hidden");
+
+          // TODO: фильтрация по типу — btn.dataset.type
+        });
+      });
+    </script>
+  </body>
+</html>

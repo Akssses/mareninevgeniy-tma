@@ -1,0 +1,53 @@
+.notifications {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.notification {
+  display: flex;
+  gap: 12px;
+  background: #fafafac7;
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.icon {
+  min-width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background-color: #fff6ec;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-time::before {
+  content: "⏱️";
+  font-size: 18px;
+}
+
+.icon-warning::before {
+  content: "⚠️";
+  font-size: 18px;
+}
+
+.icon-chart::before {
+  content: "📈";
+  font-size: 18px;
+}
+
+.text p {
+  font-size: 14px;
+  line-height: 140%;
+  margin-bottom: 10px;
+}
+
+.text span {
+  font-size: 13px;
+  color: #999;
+}
+
+.ntf-tab .tab-btn.active {
+  color: #000000;
+}

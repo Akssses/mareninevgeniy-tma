@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <title>Notification</title>
+  </head>
+  <body>
+    <main class="container">
+      <!-- Notification Bar -->
+      <div data-component="notification-bar"></div>
+
+      <div class="ntf-tab">
+        <button class="tab-btn active" data-tab="all">Все</button>
+        <button class="tab-btn" data-tab="unread">Непрочитанные (1)</button>
+      </div>
+
+      <!-- Все уведомления -->
+      <div class="notifications" id="tab-all">
+        <div class="notification">
+          <div class="icon">
+            <img src="/assets/icons/updateIcon.svg" alt="" />
+          </div>
+          <div class="text">
+            <p>
+              Ваш баланс обновился: проверьте новые поступления или списания на
+              счёте.
+            </p>
+            <span>2 мин назад</span>
+          </div>
+        </div>
+
+        <div class="notification">
+          <div class="icon">
+            <img src="/assets/icons/warningIcon.svg" alt="" />
+          </div>
+          <div class="text">
+            <p>
+              У вас есть неподтверждённые транзакции: пожалуйста, проверьте
+              историю операций.
+            </p>
+            <span>2 мин назад</span>
+          </div>
+        </div>
+
+        <div class="notification">
+          <div class="icon">
+            <img src="/assets/icons/changeIcon.svg" alt="" />
+          </div>
+          <div class="text">
+            <p>
+              Изменился курс выбранных вами валют — следите за динамикой в
+              реальном времени.
+            </p>
+            <span>2 мин назад</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Только непрочитанные -->
+      <div class="notifications" id="tab-unread" style="display: none">
+        <div class="notification">
+          <div class="icon">
+            <img src="/assets/icons/warningIcon.svg" alt="" />
+          </div>
+          <div class="text">
+            <p>
+              У вас есть неподтверждённые транзакции: пожалуйста, проверьте
+              историю операций.
+            </p>
+            <span>2 мин назад</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navbar -->
+      <div data-component="navbar"></div>
+    </main>
+  </body>
+
+  <!-- Circles -->
+  <div class="circles">
+    <img class="ellipse" src="./assets/images/ellipse.svg" alt="" />
+    <img class="circle1" src="./assets/images/circle1.png" alt="" />
+    <img class="circle2" src="./assets/images/circle2.png" alt="" />
+    <img class="circle3" src="./assets/images/circle3.png" alt="" />
+    <img class="circle4" src="./assets/images/circle4.png" alt="" />
+  </div>
+
+  <script type="module" src="./scripts/main.js"></script>
+  <script>
+    const tabButtons = document.querySelectorAll(".tab-btn");
+    const allTab = document.getElementById("tab-all");
+    const unreadTab = document.getElementById("tab-unread");
+
+    tabButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        tabButtons.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        if (btn.dataset.tab === "all") {
+          allTab.style.display = "block";
+          unreadTab.style.display = "none";
+        } else {
+          allTab.style.display = "none";
+          unreadTab.style.display = "block";
+        }
+      });
+    });
+  </script>
+</html>

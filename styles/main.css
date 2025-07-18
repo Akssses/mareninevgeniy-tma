@@ -13,6 +13,9 @@
 
 @import "./notification-bar.css";
 @import "./notification/notification-notfound.css";
+@import "./notification/notification.css";
+
+@import "./transactionPage.css";
 
 .container {
   max-width: 548px;
