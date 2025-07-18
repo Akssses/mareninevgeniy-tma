@@ -17,6 +17,7 @@
 
 @import "./transactionPage.css";
 @import "./exchange.css";
+@import "./status-pages.css";
 
 .container {
   max-width: 548px;

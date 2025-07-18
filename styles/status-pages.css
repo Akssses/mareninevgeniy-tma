@@ -1,0 +1,149 @@
+.success-container {
+  background-image: url("/assets/images/success-bg.svg");
+  background-size: contain;
+  height: 100%;
+  background-repeat: no-repeat;
+  padding: 20px;
+
+  min-height: 100vh; /* Занимает всю высоту экрана */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Центровка по вертикали */
+  align-items: center; /* Центровка по горизонтали */
+  gap: 80px;
+  text-align: center;
+
+  h2 {
+    font-size: 28px;
+  }
+
+  .status-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+
+    h3 {
+      font-size: 32px;
+    }
+
+    span {
+      color: #8e8e93;
+      font-size: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      color: #8e8e93;
+    }
+  }
+
+  button {
+    background: #34c759;
+    width: 100%;
+    border-radius: 999px;
+    padding: 15px;
+    color: #fff;
+    font-size: 16px;
+  }
+}
+
+.danger-container {
+  background-image: url("/assets/images/danger-bg.svg");
+  background-size: contain;
+  height: 100%;
+  background-repeat: no-repeat;
+  padding: 20px;
+
+  min-height: 100vh; /* Занимает всю высоту экрана */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Центровка по вертикали */
+  align-items: center; /* Центровка по горизонтали */
+  gap: 80px;
+  text-align: center;
+
+  h2 {
+    font-size: 28px;
+  }
+
+  .status-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+
+    h3 {
+      font-size: 32px;
+    }
+
+    span {
+      color: #8e8e93;
+      font-size: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      color: #8e8e93;
+    }
+  }
+
+  button {
+    background: #ff9500;
+    width: 100%;
+    border-radius: 999px;
+    padding: 15px;
+    color: #fff;
+    font-size: 16px;
+  }
+}
+
+.error-container {
+  background-image: url("/assets/images/error-bg.svg");
+  background-size: contain;
+  height: 100%;
+  background-repeat: no-repeat;
+  padding: 20px;
+
+  min-height: 100vh; /* Занимает всю высоту экрана */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Центровка по вертикали */
+  align-items: center; /* Центровка по горизонтали */
+  gap: 80px;
+  text-align: center;
+
+  h2 {
+    font-size: 28px;
+  }
+
+  .status-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+
+    h3 {
+      font-size: 32px;
+    }
+
+    span {
+      color: #8e8e93;
+      font-size: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      color: #8e8e93;
+    }
+  }
+
+  button {
+    background: #ff3b30;
+    width: 100%;
+    border-radius: 999px;
+    padding: 15px;
+    color: #fff;
+    font-size: 16px;
+  }
+}
