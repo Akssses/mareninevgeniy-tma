@@ -11,19 +11,19 @@
       <section class="onboarding-screen">
         <img
           class="onboarding-screen-bg"
-          src="/assets/images/Onboarding3.png"
+          src="/assets/images/tutorial2.png"
           alt="Background"
         />
 
         <div class="onboardings-panel">
           <div class="panel-content">
             <h1>
-              Быстрые переводы и <br />
-              обмен
+              Отслеживайте <br />
+              расходы
             </h1>
             <p>
-              Инвестируйте и переводите средства <br />
-              в пару кликов.
+              Держите ежедневные траты под <br />
+              контролем в реальном времени.
             </p>
             <div class="panel-actions">
               <div class="avatar-animated-wrapper">
@@ -42,7 +42,7 @@
                     </defs>
                     <text class="circle-text">
                       <textPath href="#circle-path" startOffset="0%">
-                        Управление
+                        Обучение
                       </textPath>
                     </text>
                   </svg>
@@ -82,7 +82,7 @@
         progress += 360 / (SCREEN_DURATION / TIMER_UPDATE_INTERVAL);
 
         if (progress >= 360) {
-          window.location.href = "onboardings4.html";
+          window.location.href = "onboardings6.html";
           return;
         }
 
@@ -92,7 +92,7 @@
       const timerInterval = setInterval(updateTimer, TIMER_UPDATE_INTERVAL);
 
       document.getElementById("next-btn").addEventListener("click", () => {
-        window.location.href = "onboardings4.html";
+        window.location.href = "onboardings6.html";
       });
 
       document.addEventListener("visibilitychange", () => {
