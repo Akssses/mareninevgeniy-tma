@@ -25,6 +25,7 @@
 @import "./profile/profileList.css";
 
 @import "./bank.css";
+@import "./onboardings.css";
 
 .container {
   max-width: 548px;

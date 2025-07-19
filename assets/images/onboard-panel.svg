@@ -1,0 +1,27 @@
+<svg width="375" height="338" viewBox="0 0 375 338" fill="none" xmlns="http://www.w3.org/2000/svg">
+<foreignObject x="-4" y="-4" width="383" height="346"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(2px);clip-path:url(#bgblur_0_2744_5298_clip_path);height:100%;width:100%"></div></foreignObject><g filter="url(#filter0_n_2744_5298)" data-figma-bg-blur-radius="4">
+<path d="M0 56.5447C0 30.8013 19.524 9.28663 45.1853 7.23258C85.3994 4.01367 144.496 -0.010571 188.5 0C232.265 0.0105136 290.246 3.98703 329.871 7.19032C355.504 9.26256 375 30.7645 375 56.4813V338H0V56.5447Z" fill="black" fill-opacity="0.9"/>
+</g>
+<defs>
+<filter id="filter0_n_2744_5298" x="-4" y="-4" width="383" height="346" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feTurbulence type="fractalNoise" baseFrequency="2 2" stitchTiles="stitch" numOctaves="3" result="noise" seed="7608" />
+<feComponentTransfer in="noise" result="coloredNoise1">
+<feFuncR type="linear" slope="2" intercept="-0.5" />
+<feFuncG type="linear" slope="2" intercept="-0.5" />
+<feFuncB type="linear" slope="2" intercept="-0.5" />
+<feFuncA type="discrete" tableValues="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "/>
+</feComponentTransfer>
+<feComposite operator="in" in2="shape" in="coloredNoise1" result="noise1Clipped" />
+<feComponentTransfer in="noise1Clipped" result="color1">
+<feFuncA type="table" tableValues="0 0.1" />
+</feComponentTransfer>
+<feMerge result="effect1_noise_2744_5298">
+<feMergeNode in="shape" />
+<feMergeNode in="color1" />
+</feMerge>
+</filter>
+<clipPath id="bgblur_0_2744_5298_clip_path" transform="translate(4 4)"><path d="M0 56.5447C0 30.8013 19.524 9.28663 45.1853 7.23258C85.3994 4.01367 144.496 -0.010571 188.5 0C232.265 0.0105136 290.246 3.98703 329.871 7.19032C355.504 9.26256 375 30.7645 375 56.4813V338H0V56.5447Z"/>
+</clipPath></defs>
+</svg>

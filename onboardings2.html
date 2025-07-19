@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <title>Onboarding</title>
+  </head>
+  <body>
+    <main class="onboardings-container">
+      <section class="onboarding-screen">
+        <img
+          class="onboarding-screen-bg"
+          src="/assets/images/Onboarding2.png"
+          alt="Background"
+        />
+
+        <div class="onboardings-panel">
+          <div class="panel-content">
+            <h1>
+              Отслеживайте <br />
+              балансы и доходы
+            </h1>
+            <p>
+              Вся финансовая информация всегда <br />
+              под рукой.
+            </p>
+            <div class="panel-actions">
+              <div class="avatar-animated-wrapper">
+                <img
+                  src="/assets/images/Avatar2.png"
+                  alt="Avatar"
+                  class="avatar-img"
+                />
+                <div class="circle-animated-text">
+                  <svg viewBox="0 0 120 120">
+                    <defs>
+                      <path
+                        id="circle-path"
+                        d="M 60,60 m -40,0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0"
+                      />
+                    </defs>
+                    <text class="circle-text">
+                      <textPath href="#circle-path" startOffset="0%">
+                        Управление
+                      </textPath>
+                    </text>
+                  </svg>
+                </div>
+              </div>
+              <button class="next-button" id="next-btn">
+                <div class="timer-ring" id="timer2"></div>
+                <img
+                  src="/assets/images/arrow.svg"
+                  alt="Arrow"
+                  style="
+                    position: relative;
+                    z-index: 10;
+                    width: 24px;
+                    height: 24px;
+                  "
+                />
+              </button>
+            </div>
+          </div>
+          <img
+            class="panel-img"
+            src="/assets/images/onboard-panel.svg"
+            alt="Panel Background"
+          />
+        </div>
+      </section>
+    </main>
+
+    <script>
+      let progress = 0;
+      const SCREEN_DURATION = 5000;
+      const TIMER_UPDATE_INTERVAL = 50;
+      const timerRing = document.getElementById("timer2");
+
+      function updateTimer() {
+        progress += 360 / (SCREEN_DURATION / TIMER_UPDATE_INTERVAL);
+
+        if (progress >= 360) {
+          window.location.href = "onboardings3.html";
+          return;
+        }
+
+        timerRing.style.background = `conic-gradient(#FF6B1A ${progress}deg, transparent ${progress}deg)`;
+      }
+
+      const timerInterval = setInterval(updateTimer, TIMER_UPDATE_INTERVAL);
+
+      document.getElementById("next-btn").addEventListener("click", () => {
+        window.location.href = "onboardings3.html";
+      });
+
+      document.addEventListener("visibilitychange", () => {
+        if (document.hidden) {
+          clearInterval(timerInterval);
+        } else {
+          setInterval(updateTimer, TIMER_UPDATE_INTERVAL);
+        }
+      });
+    </script>
+  </body>
+</html>

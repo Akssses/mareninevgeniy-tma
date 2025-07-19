@@ -1,0 +1,175 @@
+.onboardings-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.onboarding-screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.onboarding-screen-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.character-container {
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.money-character {
+  width: 200px;
+  height: auto;
+}
+
+.onboardings-panel {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+}
+
+.panel-img {
+  width: 100%;
+  display: block;
+}
+
+.panel-content {
+  position: absolute;
+  bottom: 12%;
+  width: 100%;
+  padding: 0 24px;
+  text-align: center;
+  color: white;
+  z-index: 4;
+}
+
+.panel-content h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  line-height: 160%;
+  text-align: center;
+}
+
+.panel-content p {
+  font-size: 18px;
+  color: #b9b9b9;
+  line-height: 28px;
+}
+
+.panel-actions {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+}
+
+.avatar-animated-wrapper {
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+
+.avatar-img {
+  width: 100%;
+  height: auto;
+  z-index: 2;
+  position: relative;
+  border-radius: 50%;
+}
+
+/* Круговой текст */
+.circle-animated-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  transform: translate(-50%, -50%);
+  animation: spinText 8s linear infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.circle-animated-text svg {
+  width: 100%;
+  height: 100%;
+}
+
+.circle-text {
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  fill: #ffffff;
+  text-transform: uppercase;
+}
+
+@keyframes spinText {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.next-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.next-button:hover {
+  transform: scale(1.05);
+}
+
+.timer-ring {
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  background: conic-gradient(#ff6b1a 0deg, transparent 0deg);
+  transition: all 0.1s linear;
+}
+
+.timer-ring::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 60px;
+  height: 60px;
+  background: white;
+  border-radius: 50%;
+}
+
+.arrow-btn img {
+  width: 24px;
+  height: 24px;
+  z-index: 2;
+}
