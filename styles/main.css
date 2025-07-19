@@ -20,6 +20,10 @@
 @import "./status-pages.css";
 @import "./story.css";
 
+@import "./profile/userCard.css";
+@import "./profile/authCards.css";
+@import "./profile/profileList.css";
+
 .container {
   max-width: 548px;
   margin: 0 auto;

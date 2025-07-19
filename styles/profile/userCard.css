@@ -1,0 +1,133 @@
+.profile-card {
+  background: #fafafac7;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  padding-top: 20px;
+  text-align: center;
+  position: relative;
+
+  .edit-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #fff0dd;
+    border-radius: 50%;
+    padding: 8px;
+  }
+
+  .edit-icon img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .avatar {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background: #fafafa;
+    border: 1px solid #f2f2f7;
+    position: relative;
+  }
+
+  .checkmark {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+  }
+
+  .userInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .profile-name {
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 15px;
+  }
+
+  .profile-email {
+    color: #8e8e93;
+    font-size: 14px;
+    border-radius: 999px;
+    border: 1px solid #f2f2f7;
+    padding: 5px 10px;
+    text-align: center;
+  }
+
+  .profile-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 20px 0;
+    font-size: 14px;
+
+    .qwerty {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      gap: 5px;
+      padding-bottom: 10px;
+    }
+
+    .qwqw {
+      text-wrap: nowrap;
+      margin: 0;
+    }
+  }
+
+  .profile123 {
+    padding: 0px 20px 20px 20px;
+    background: #fafafa;
+    border-radius: 20px;
+    border: 1px solid #f2f2f7;
+  }
+
+  .lineee {
+    background: #e5e5ea;
+    max-width: 1px;
+    height: 40px;
+  }
+
+  .profile-info div {
+    width: 50%;
+  }
+
+  .profile-info span {
+    display: block;
+    color: gray;
+    font-size: 13px;
+    margin-bottom: 4px;
+  }
+
+  .verify-btn {
+    margin-top: 10px;
+    background-color: #ff9500;
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 99px;
+    font-size: 15px;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .verify-btn img {
+    width: 18px;
+    height: 18px;
+    filter: brightness(0) invert(1);
+  }
+}

@@ -1,0 +1,73 @@
+.account-list {
+  background: #fafafac7;
+  border-radius: 20px;
+  padding: 15px;
+
+  .account {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px dashed #ddd;
+    background: rgba(250, 250, 250, 0.7);
+    padding: 5px;
+    padding-left: 10px;
+    border-radius: 999px;
+    margin-bottom: 10px;
+  }
+
+  .list-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #cccccc;
+  }
+
+  .account img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+  }
+
+  .account span {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #8e8e93;
+    font-weight: 500;
+  }
+
+  .btn2 {
+    padding: 6px 14px;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  .detach {
+    background-color: #fde8e8;
+    color: #c00;
+  }
+
+  .attach {
+    background-color: #fff3db;
+    color: #f90;
+  }
+
+  .link-box {
+    background: #f9f9f9;
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .link-box:hover {
+    background: #f1f1f1;
+  }
+}
