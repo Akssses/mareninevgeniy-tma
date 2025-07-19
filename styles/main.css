@@ -24,6 +24,8 @@
 @import "./profile/authCards.css";
 @import "./profile/profileList.css";
 
+@import "./bank.css";
+
 .container {
   max-width: 548px;
   margin: 0 auto;

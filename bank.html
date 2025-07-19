@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <title>Bank</title>
+  </head>
+  <body>
+    <main class="container">
+      <!-- Header -->
+      <div data-component="header"></div>
+
+      <section class="deposit-section">
+        <!-- Активные вклады -->
+        <div class="deposit-block">
+          <div class="deposit-header">
+            <div class="deposit-title">
+              <img src="assets/icons/checkList.svg" alt="deposit" />
+              Активные вклады
+            </div>
+            <button class="deposit-add-btn">+</button>
+          </div>
+          <div class="deposit-active-list">
+            <div class="deposit-card-active">
+              <div class="deposit-coin-row">
+                <div class="coin-title">
+                  <img src="assets/icons/btc.svg" alt="btc" />
+                  Bitcoin <span class="coin-label">BTC</span>
+                </div>
+                <img
+                  src="assets/icons/setting.svg"
+                  alt="settings"
+                  class="coin-settings"
+                />
+              </div>
+              <div class="coin-info">
+                <div class="label">Сумма займа</div>
+                <div class="value">
+                  <h5>0.2 BTC</h5>
+                  <span>~$20,510</span>
+                </div>
+              </div>
+              <div class="coin-detail">
+                <div>
+                  <h5>Ежедневно</h5>
+                  <span>5%</span>
+                </div>
+                <div>
+                  <h5>Общий</h5>
+                  <span>100%</span>
+                </div>
+                <div>
+                  <h5>Заработано</h5>
+                  <span>0.025 BTC</span>
+                </div>
+              </div>
+            </div>
+            <div class="deposit-card-active">
+              <div class="deposit-coin-row">
+                <div class="coin-title">
+                  <img src="assets/icons/btc.svg" alt="btc" />
+                  Bitcoin <span class="coin-label">BTC</span>
+                </div>
+                <img
+                  src="assets/icons/setting.svg"
+                  alt="settings"
+                  class="coin-settings"
+                />
+              </div>
+              <div class="coin-info">
+                <div class="label">Сумма займа</div>
+                <div class="value">
+                  <h5>0.2 BTC</h5>
+                  <span>~$20,510</span>
+                </div>
+              </div>
+              <div class="coin-detail">
+                <div>
+                  <h5>Ежедневно</h5>
+                  <span>5%</span>
+                </div>
+                <div>
+                  <h5>Общий</h5>
+                  <span>100%</span>
+                </div>
+                <div>
+                  <h5>Заработано</h5>
+                  <span>0.025 BTC</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Доступные вклады -->
+        <div class="deposit-block">
+          <div class="deposit-header">
+            <div class="deposit-title">
+              <img src="assets/icons/deposit.svg" alt="deposit" />
+              Доступные вклады
+            </div>
+            <div class="deposit-filter">
+              <span>По умолчанию</span>
+              <img src="assets/icons/arrowdown.svg" alt="arrow" />
+            </div>
+          </div>
+
+          <!-- Карточки вкладов -->
+          <div class="deposit-card-list">
+            <!-- Вклад -->
+            <div class="deposit-card">
+              <div class="deposit-card-header">
+                <div class="deposit-card-name">
+                  <img src="assets/icons/shield.svg" alt="shield" />
+                  Мини
+                </div>
+                <img src="assets/icons/info.svg" alt="info" />
+              </div>
+              <div class="deposit-card-body">
+                <div class="deposit-info">
+                  <div class="info-stat">
+                    <div>
+                      <img src="assets/icons/calendar.svg" alt="calendar" />
+                      Срок:
+                    </div>
+
+                    <span>21 день</span>
+                  </div>
+                  <div class="info-stat">
+                    <div>
+                      <img src="assets/icons/wallett.svg" alt="wallet" /> Мин /
+                      Макс:
+                    </div>
+
+                    <span>$1000 / $3000</span>
+                  </div>
+                  <div class="info-stat">
+                    <div>
+                      <img src="assets/icons/percent.svg" alt="percent" />
+                      Ставка:
+                    </div>
+                    <span>2% в день</span>
+                  </div>
+                  <div class="info-stat">
+                    <div>
+                      <img src="assets/icons/support.svg" alt="support" />
+                      Поддерживается:
+                    </div>
+                    <span class="crypto-icons">
+                      <img src="assets/icons/eth.svg" alt="eth" />
+                      <img src="assets/icons/usdt.svg" alt="usdt" />
+                      <img src="assets/icons/ton.svg" alt="bnb" />
+                    </span>
+                  </div>
+                </div>
+                <button class="deposit-action-btn">
+                  <img src="assets/icons/play.svg" alt="play" />
+                  Активировать займ
+                </button>
+              </div>
+            </div>
+            <div class="deposit-card">
+              <div class="deposit-card-header">
+                <div class="deposit-card-name">
+                  <img src="assets/icons/shield.svg" alt="shield" />
+                  Стандарт
+                </div>
+                <img src="assets/icons/info.svg" alt="info" />
+              </div>
+              <div class="deposit-card-body">
+                <div class="deposit-info">
+                  <div class="info-stat">
+                    <div>
+                      <img src="assets/icons/calendar.svg" alt="calendar" />
+                      Срок:
+                    </div>
+
+                    <span>21 день</span>
+                  </div>
+                  <div class="info-stat">
+                    <div>
+                      <img src="assets/icons/wallett.svg" alt="wallet" /> Мин /
+                      Макс:
+                    </div>
+
+                    <span>$1000 / $3000</span>
+                  </div>
+                  <div class="info-stat">
+                    <div>
+                      <img src="assets/icons/percent.svg" alt="percent" />
+                      Ставка:
+                    </div>
+                    <span>2% в день</span>
+                  </div>
+                  <div class="info-stat">
+                    <div>
+                      <img src="assets/icons/support.svg" alt="support" />
+                      Поддерживается:
+                    </div>
+                    <span class="crypto-icons">
+                      <img src="assets/icons/eth.svg" alt="eth" />
+                      <img src="assets/icons/usdt.svg" alt="usdt" />
+                      <img src="assets/icons/ton.svg" alt="bnb" />
+                    </span>
+                  </div>
+                </div>
+                <button class="deposit-action-btn">
+                  <img src="assets/icons/play.svg" alt="play" />
+                  Активировать займ
+                </button>
+              </div>
+            </div>
+            <div class="deposit-card">
+              <div class="deposit-card-header">
+                <div class="deposit-card-name">
+                  <img src="assets/icons/shield.svg" alt="shield" />
+                  Про
+                </div>
+                <img src="assets/icons/info.svg" alt="info" />
+              </div>
+              <div class="deposit-card-body">
+                <div class="deposit-info">
+                  <div class="info-stat">
+                    <div>
+                      <img src="assets/icons/calendar.svg" alt="calendar" />
+                      Срок:
+                    </div>
+
+                    <span>21 день</span>
+                  </div>
+                  <div class="info-stat">
+                    <div>
+                      <img src="assets/icons/wallett.svg" alt="wallet" /> Мин /
+                      Макс:
+                    </div>
+
+                    <span>$1000 / $3000</span>
+                  </div>
+                  <div class="info-stat">
+                    <div>
+                      <img src="assets/icons/percent.svg" alt="percent" />
+                      Ставка:
+                    </div>
+                    <span>2% в день</span>
+                  </div>
+                  <div class="info-stat">
+                    <div>
+                      <img src="assets/icons/support.svg" alt="support" />
+                      Поддерживается:
+                    </div>
+                    <span class="crypto-icons">
+                      <img src="assets/icons/eth.svg" alt="eth" />
+                      <img src="assets/icons/usdt.svg" alt="usdt" />
+                      <img src="assets/icons/ton.svg" alt="bnb" />
+                    </span>
+                  </div>
+                </div>
+                <button class="deposit-action-btn">
+                  <img src="assets/icons/play.svg" alt="play" />
+                  Активировать займ
+                </button>
+              </div>
+            </div>
+
+            <!-- Повторить блок для Стандарт / Про -->
+            <!-- Просто меняется название и иконки -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Navbar -->
+      <div data-component="navbar"></div>
+    </main>
+  </body>
+
+  <!-- Circles -->
+  <div class="circles">
+    <img class="ellipse" src="./assets/images/ellipse.svg" alt="" />
+    <img class="circle1" src="./assets/images/circle1.png" alt="" />
+    <img class="circle2" src="./assets/images/circle2.png" alt="" />
+    <img class="circle3" src="./assets/images/circle3.png" alt="" />
+    <img class="circle4" src="./assets/images/circle4.png" alt="" />
+  </div>
+
+  <script type="module" src="./scripts/main.js"></script>
+</html>

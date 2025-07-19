@@ -1,0 +1,240 @@
+.deposit-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .deposit-block {
+    background: #fff;
+    border-radius: 20px;
+    padding: 10px;
+    background: rgba(250, 250, 250, 0.7);
+  }
+
+  .deposit-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #d1d1d6;
+  }
+
+  .deposit-title {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 16px;
+    gap: 8px;
+  }
+
+  .deposit-add-btn {
+    background: #f3f3f3;
+    border-radius: 50%;
+    border: none;
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .deposit-filter {
+    background: #f6f6f6;
+    padding: 8px 12px;
+    border-radius: 12px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+  }
+
+  .deposit-active-list {
+    display: flex;
+    gap: 12px;
+    overflow-x: scroll;
+  }
+
+  .deposit-active-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .deposit-card-active {
+    background: #fafafa;
+    border-radius: 16px;
+    padding: 16px;
+    flex: 1;
+    border: 1px solid #f2f2f7;
+    min-width: 300px;
+  }
+
+  .deposit-coin-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+
+  .coin-title {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .coin-label {
+    color: #999;
+    font-size: 13px;
+  }
+
+  .coin-settings {
+    width: 30px;
+    cursor: pointer;
+  }
+
+  .coin-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .coin-detail {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin-top: 20px;
+
+      h5 {
+        color: #8e8e93;
+        font-size: 10px;
+        font-weight: 500;
+      }
+
+      span {
+        font-size: 14px;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .label {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 15px;
+  }
+
+  .value {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 100%;
+
+    h5 {
+      font-size: 18px;
+      font-weight: 600;
+    }
+  }
+
+  .value-small {
+    font-size: 13px;
+    color: #444;
+  }
+
+  .coin-progress {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+  .deposit-card {
+    background: #fafafa;
+    border-radius: 16px;
+    border: 1px solid #e5e5ea;
+    margin-bottom: 10px;
+  }
+
+  .deposit-card-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .deposit-card-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #8e8e93;
+  }
+
+  .deposit-card-body .deposit-info {
+    font-size: 14px;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .deposit-card-body {
+    border-top: 1px solid #e5e5ea;
+    border-radius: 16px;
+  }
+
+  .deposit-info {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    padding: 15px;
+    gap: 20px !important;
+  }
+
+  .info-stat {
+    display: flex !important;
+    flex-direction: column;
+    gap: 10px;
+
+    div {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      color: #8e8e93;
+    }
+
+    span {
+      font-weight: 600;
+      font-size: 14px;
+    }
+  }
+  .crypto-icons {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .crypto-icons img {
+    width: 20px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .deposit-action-btn {
+    background: #ff9500;
+    color: #fff;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    border-radius: 0 0 12px 12px;
+    font-size: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+  }
+}
