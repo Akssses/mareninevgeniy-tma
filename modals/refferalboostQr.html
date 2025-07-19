@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/modals/modal.css" />
+    <title>Modals Page</title>
+  </head>
+  <body>
+    <main class="container">
+      <button class="openModalBtn" id="openModalBtn">Открыть модалку</button>
+      <a href="/modals/modals-list.html">
+        <button class="openModalBtn" id="openModalBtn">Cписок модалок</button>
+      </a>
+
+      <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" id="modal">
+          <div class="modal-handle"></div>
+
+          <h2>Поделитесь своей реферальной ссылкой</h2>
+          <div class="modal-qr">
+            <div class="qr-block">
+              <img src="/assets/icons/qr.svg" alt="" />
+            </div>
+            <div class="qr-copy">
+              <p>Test123dffsd3423423WESD341...</p>
+              <img src="/assets/icons/copy.svg" alt="" />
+            </div>
+          </div>
+          <div class="line"></div>
+          <button class="start-btn">Поделиться</button>
+        </div>
+      </div>
+    </main>
+
+    <script src="/scripts/modal.js"></script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/modals/modal.css" />
+    <title>Modals Page</title>
+  </head>
+  <body>
+    <main class="container">
+      <button class="openModalBtn" id="openModalBtn">Открыть модалку</button>
+      <a href="/modals/modals-list.html">
+        <button class="openModalBtn" id="openModalBtn">Cписок модалок</button>
+      </a>
+
+      <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" id="modal">
+          <div class="modal-handle"></div>
+          <div class="modal-icon">
+            <img src="/assets/icons/backs.svg" alt="" />
+          </div>
+          <h2>Условия повышения</h2>
+          <p class="goal">Цель: $15,000за 7 дней</p>
+          <p class="description">
+            Проверьте свои награды, получите их сейчас и следите за новостями —
+            скоро их будет больше.
+          </p>
+          <div class="line"></div>
+          <button class="start-btn">Начинать</button>
+        </div>
+      </div>
+    </main>
+
+    <script src="/scripts/modal.js"></script>
+  </body>
+</html>

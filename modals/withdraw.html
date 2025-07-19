@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/modals/modal.css" />
+    <title>Modals Page</title>
+  </head>
+  <body>
+    <main class="container">
+      <button class="openModalBtn" id="openModalBtn">Открыть модалку</button>
+      <a href="/modals/modals-list.html">
+        <button class="openModalBtn" id="openModalBtn">Cписок модалок</button>
+      </a>
+
+      <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" id="modal">
+          <div class="modal-handle"></div>
+          <div class="withdraaw-modal">
+            <h2>Withdraw</h2>
+
+            <!-- Шаг 1 -->
+            <div class="withdraw-step">
+              <div class="step-content">
+                <div class="step-top">
+                  <div class="step-top-left">
+                    <div class="step-number">1</div>
+                    <span class="step-label">Доступно: <strong>0</strong></span>
+                  </div>
+
+                  <span class="step-right">Минимальная</span>
+                </div>
+                <div class="withdraw-input">
+                  <div class="crypto-select">
+                    <img
+                      class="btc-icon"
+                      src="/assets/icons/btc.svg"
+                      alt="btc"
+                    />
+                    <span>Bitcoin <span style="color: #8e8e93">BTC</span></span>
+                    <span class="arrow"
+                      ><img src="/assets/icons/arrowdown.svg" alt=""
+                    /></span>
+                  </div>
+                  <span class="enterAmount">Введите сумму</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Шаг 2 -->
+            <div class="withdraw-step">
+              <div class="step-content">
+                <div class="step-top">
+                  <div class="step-top-left">
+                    <div class="step-number">2</div>
+                    <span class="step-label">Выберите сеть</span>
+                  </div>
+
+                  <span class="step-right">Сеть для перевода</span>
+                </div>
+                <div class="withdraw-input">
+                  <select>
+                    <option selected disabled>Выберите сеть</option>
+                    <option>BTC</option>
+                    <option>TRC20</option>
+                    <option>ERC20</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Шаг 3 -->
+            <div class="withdraw-step">
+              <div class="step-content">
+                <div class="step-top">
+                  <div class="step-top-left">
+                    <div class="step-number">3</div>
+                    <span class="step-label">Адрес кошелька</span>
+                  </div>
+                </div>
+                <div class="withdraw-input">
+                  <input type="text" placeholder="Введите кошелек" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button class="start-btn">Начинать</button>
+        </div>
+      </div>
+    </main>
+
+    <script src="/scripts/modal.js"></script>
+  </body>
+</html>

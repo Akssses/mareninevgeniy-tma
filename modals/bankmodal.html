@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/modals/modal.css" />
+    <title>Modals Page</title>
+  </head>
+  <body>
+    <main class="container">
+      <button class="openModalBtn" id="openModalBtn">Открыть модалку</button>
+      <a href="/modals/modals-list.html">
+        <button class="openModalBtn" id="openModalBtn">Cписок модалок</button>
+      </a>
+
+      <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" id="modal">
+          <div class="modal-handle"></div>
+          <div class="withdraaw-modal">
+            <h2>Рассчитать “Мини”</h2>
+
+            <div class="withdraw-step">
+              <div class="step-content">
+                <div class="step-top">
+                  <div class="step-top-left">
+                    <div class="step-number">1</div>
+                    <span class="step-label">Актив</span>
+                  </div>
+
+                  <span class="step-right">Досутпно: 0</span>
+                </div>
+                <div class="withdraw-input">
+                  <div class="crypto-select">
+                    <span>Выбрать валюту</span>
+                    <span class="arrow"
+                      ><img src="/assets/icons/arrowdown.svg" alt=""
+                    /></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="withdraw-step">
+              <div class="step-content">
+                <div class="step-top">
+                  <div class="step-top-left">
+                    <div class="step-number">2</div>
+                    <span class="step-label">Сумма</span>
+                  </div>
+                </div>
+                <div class="withdraw-input">
+                  <input type="text" placeholder="0.00 - Введите сумму" />
+                </div>
+              </div>
+            </div>
+
+            <div class="withdraw-step">
+              <div class="step-content">
+                <div class="step-top">
+                  <div class="step-top-left">
+                    <div class="step-number">3</div>
+                    <span class="step-label"
+                      >Сумма <span id="rangePercent">0%</span></span
+                    >
+                  </div>
+                  <span class="info-icon">
+                    <img src="/assets/icons/info.svg" alt="info" />
+                  </span>
+                </div>
+                <div class="withdraw-input range-wrapper">
+                  <input
+                    type="range"
+                    id="rangeSlider"
+                    min="0"
+                    max="100"
+                    value="0"
+                    step="1"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="withdraw-step">
+              <div class="step-content">
+                <div class="step-top">
+                  <div class="step-top-left">
+                    <div class="step-number">4</div>
+                    <span class="step-label">Срок</span>
+                  </div>
+                </div>
+                <div class="withdraw-input">
+                  <div class="crypto-select">
+                    <span>5 дней</span>
+                    <span class="arrow"
+                      ><img src="/assets/icons/arrowdown.svg" alt=""
+                    /></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="reinvest-block">
+            <!-- Переключатель -->
+            <div class="reinvest-toggle">
+              <button class="toggle-btn active">Реинвест: Вкл</button>
+              <button class="toggle-btn">Реинвест: Выкл</button>
+            </div>
+
+            <!-- Данные -->
+            <div class="reinvest-info">
+              <div class="info-item">
+                <div class="info-label">
+                  <span class="icon"
+                    ><img src="/assets/icons/graydollar.svg" alt=""
+                  /></span>
+                  Ставка
+                </div>
+                <div class="info-value">$00.0</div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-label">
+                  <span class="icon"
+                    ><img src="/assets/icons/percent.svg" alt=""
+                  /></span>
+                  Средний дневной доход
+                </div>
+                <div class="info-value">2</div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-label">
+                  <span class="icon"
+                    ><img src="/assets/icons/percent.svg" alt=""
+                  /></span>
+                  Общий доход
+                </div>
+                <div class="info-value">157</div>
+              </div>
+            </div>
+          </div>
+
+          <button class="start-btn">Активировать займ</button>
+        </div>
+      </div>
+    </main>
+
+    <script src="/scripts/modal.js"></script>
+    <script>
+      document.querySelectorAll(".toggle-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          document
+            .querySelectorAll(".toggle-btn")
+            .forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+        });
+      });
+    </script>
+    <script>
+      const slider = document.getElementById("rangeSlider");
+      const output = document.getElementById("rangePercent");
+
+      slider.addEventListener("input", () => {
+        output.textContent = `${slider.value}%`;
+      });
+    </script>
+  </body>
+</html>

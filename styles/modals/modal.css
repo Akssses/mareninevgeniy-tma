@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@import "./refferalboost.css";
+@import "./withdraaw-modal.css";
+@import "./setting-modal.css";
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.openModalBtn {
+  background: #ff9500;
+  border-radius: 999px;
+  width: 100%;
+  border: none;
+  color: #fff;
+  padding: 20px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal {
+  background: white;
+  border-radius: 20px 20px 0 0;
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.modal.show {
+  transform: translateY(0%);
+}
+
+.modal.hide {
+  transform: translateY(100%);
+}
+.modal-handle {
+  width: 70px;
+  height: 5px;
+  background: #e5e5ea;
+  border-radius: 5px;
+  margin: 0 auto 10px;
+  margin-bottom: 20px;
+}
+
+.start-btn {
+  background: #ff9500;
+  color: white;
+  border: none;
+  padding: 20px;
+  font-size: 16px;
+  border-radius: 30px;
+  width: 100%;
+}
+
+.line {
+  min-width: 100%;
+  min-height: 1px;
+  border-top: 1px dashed #d1d1d6;
+  margin-bottom: 20px;
+}

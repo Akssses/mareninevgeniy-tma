@@ -1,0 +1,50 @@
+.modal-icon {
+  font-size: 32px;
+  background: #ffe0a1;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  font-size: 18px;
+  margin: 15px 0 10px;
+}
+
+.goal {
+  color: #ff9500;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.modal-qr {
+  border-radius: 25px;
+  border: 1px solid #fae3d7;
+  margin-bottom: 20px;
+  background: rgba(241, 241, 241, 0.6);
+
+  .qr-block {
+    background-image: url("/assets/images/qrbg.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .qr-copy {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+}
