@@ -70,6 +70,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 10px;
+  overflow-x: scroll;
 
   .card {
     background: #f1f1f1a6;
@@ -123,6 +124,10 @@
       }
     }
   }
+}
+
+.cryptoBalances::-webkit-scrollbar {
+  display: none;
 }
 
 .actionButtons {
