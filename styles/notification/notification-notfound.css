@@ -3,7 +3,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
+  max-width: 548px;
+  margin: 0 auto;
   background: #fafafac7;
   border-radius: 20px;
   padding: 70px 20px;

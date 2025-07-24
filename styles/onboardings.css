@@ -1,6 +1,7 @@
 .onboardings-container {
   position: relative;
-  width: 100vw;
+  max-width: 548px;
+  margin: 0 auto;
   height: 100vh;
   overflow: hidden;
 }
@@ -44,6 +45,7 @@
 
 .panel-img {
   width: 100%;
+  max-height: 430px;
   display: block;
 }
 
