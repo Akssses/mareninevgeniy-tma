@@ -5,7 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/main.css" />
     <title>Transaction</title>
+    <style>
+      .transaction-card .transaction-body {
+        display: none;
+      }
+      .transaction-card.open .transaction-body {
+        display: flex;
+      }
+      .transaction-card .amount img {
+        transition: transform 0.2s ease;
+      }
+      .transaction-card.open .amount img {
+        transform: rotate(180deg);
+      }
+    </style>
   </head>
+
   <body>
     <main class="container">
       <div class="trPageHeader">
@@ -70,7 +85,6 @@
           </div>
         </div>
 
-        <!-- Остальные карточки -->
         <div class="transaction-card">
           <div class="transaction-header">
             <div class="icon red">
@@ -150,23 +164,54 @@
         dropdown.classList.toggle("hidden");
       });
 
-      // Закрытие по клику вне
       document.addEventListener("click", (e) => {
         if (!filterButton.contains(e.target) && !dropdown.contains(e.target)) {
           dropdown.classList.add("hidden");
         }
       });
 
-      // Поведение по клику на опцию (можно заменить на фильтрацию)
       dropdown.querySelectorAll("button").forEach((btn) => {
         btn.addEventListener("click", () => {
           const label = btn.textContent;
           filterButton.innerHTML = `${label} <img src="/assets/icons/arrowdown.svg" alt="" />`;
           dropdown.classList.add("hidden");
-
-          // TODO: фильтрация по типу — btn.dataset.type
         });
       });
+    </script>
+    <script>
+      (function () {
+        const SINGLE_OPEN = false;
+
+        const cards = Array.from(
+          document.querySelectorAll(".transaction-card")
+        );
+
+        cards.forEach((card) => {
+          const header = card.querySelector(".transaction-header");
+          const body = card.querySelector(".transaction-body");
+
+          if (!header || !body) return;
+
+          if (!card.classList.contains("open")) {
+            body.style.display = "none";
+          }
+
+          header.addEventListener("click", () => {
+            if (SINGLE_OPEN) {
+              cards.forEach((c) => {
+                if (c !== card) {
+                  c.classList.remove("open");
+                  const b = c.querySelector(".transaction-body");
+                  if (b) b.style.display = "none";
+                }
+              });
+            }
+
+            const isOpen = card.classList.toggle("open");
+            body.style.display = isOpen ? "flex" : "none";
+          });
+        });
+      })();
     </script>
   </body>
 </html>

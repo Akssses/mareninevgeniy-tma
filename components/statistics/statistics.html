@@ -1,65 +1,35 @@
-<div class="statistics-container">
+<div class="statistics">
   <div class="statistics-header">
-    <h1 class="title">Статистика</h1>
-    <button class="period-selector">
-      Месяц<img src="/assets/icons/arrowdown.svg" alt="" />
-    </button>
-  </div>
-
-  <div class="chart-container">
-    <div class="y-axis">
-      <div class="y-label">50k</div>
-      <div class="y-label">20k</div>
-      <div class="y-label">10k</div>
-      <div class="y-label">0</div>
-    </div>
-
-    <div class="chart-area">
-      <div class="grid-lines">
-        <div class="grid-line"></div>
-        <div class="grid-line"></div>
-        <div class="grid-line"></div>
-        <div class="grid-line"></div>
-        <div class="grid-line"></div>
+    <div>
+      <h2>Статистика</h2>
+      <div class="current-price">
+        Текущая цена: <span id="currentPrice">$0</span>
       </div>
+    </div>
 
-      <div class="highlight-area"></div>
-
-      <svg class="chart-path" viewBox="0 0 100 100" preserveAspectRatio="none">
-        <defs>
-          <linearGradient
-            id="gradient"
-            x1="0%"
-            y1="0%"
-            x2="0%"
-            y2="100%"
-          ></linearGradient>
-          <linearGradient id="lineGradient" x1="0%" y1="100%" x2="0%" y2="0%">
-            <stop offset="0%" style="stop-color: #ff9500" />
-            <stop offset="100%" style="stop-color: #ffeed0" />
-          </linearGradient>
-        </defs>
-
-        <path
-          class="chart-area-fill"
-          d="M 0 100 L 0 90 Q 8 85 15 80 Q 22 75 30 68 Q 38 60 45 50 Q 52 40 62.5 36 Q 73 32 80 35 Q 87 38 95 42 Q 100 45 100 48 L 100 100 Z"
-        />
-
-        <path
-          class="chart-line"
-          d="M 0 90 Q 8 85 15 80 Q 22 75 30 68 Q 38 60 45 50 Q 52 40 62.5 36 Q 73 32 80 35 Q 87 38 95 42 Q 100 45 100 48"
-        />
-      </svg>
-
-      <div class="data-point"></div>
-      <div class="tooltip">$20,000</div>
+    <div class="period-selector">
+      <button class="period-btn" id="periodBtn">
+        Месяц
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M7 10l5 5 5-5"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+      <div class="period-list" id="periodList">
+        <button data-range="week">Неделя</button>
+        <button data-range="month">Месяц</button>
+        <button data-range="year">Год</button>
+      </div>
     </div>
   </div>
 
-  <div class="x-axis">
-    <div class="x-label">Апрель</div>
-    <div class="x-label">Май</div>
-    <div class="x-label">Июнь</div>
-    <div class="x-label">Июль</div>
+  <div class="chart-wrapper">
+    <div class="highlight-column" id="highlightColumn"></div>
+    <canvas id="statsChart"></canvas>
   </div>
 </div>

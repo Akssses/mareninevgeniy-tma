@@ -26,6 +26,7 @@
 
 @import "./bank.css";
 @import "./onboardings.css";
+@import "./graph.css";
 
 .container {
   max-width: 548px;

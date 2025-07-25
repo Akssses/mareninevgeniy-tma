@@ -1,11 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/main.css" />
     <title>Example</title>
+
+    <style>
+      /* --- ДОБАВЛЕНО ДЛЯ СЕЛЕКТОВ --- */
+      .exchange-card {
+        position: relative;
+      }
+      .crypto-name {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        cursor: pointer;
+      }
+      .crypto-title {
+        font-weight: 600;
+      }
+      .crypto-dropdown {
+        position: absolute;
+        left: 10px;
+        right: 10px;
+        top: 62px;
+        background: #fff;
+        border: 1px solid #e5e5ea;
+        border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        z-index: 20;
+        max-height: 260px;
+        overflow-y: auto;
+        padding: 6px 0;
+        display: none;
+      }
+      .exchange-card.open-select .crypto-dropdown {
+        display: block;
+      }
+      .crypto-option {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 14px;
+        cursor: pointer;
+        transition: background 0.15s;
+      }
+      .crypto-option:hover {
+        background: #f2f2f7;
+      }
+      .crypto-option img {
+        width: 24px;
+        height: 24px;
+      }
+      .crypto-option .ticker {
+        margin-left: auto;
+        font-size: 12px;
+        color: #8e8e93;
+      }
+      .dropdown-arrow img {
+        width: 16px;
+        height: 16px;
+        transition: transform 0.15s;
+      }
+      .exchange-card.open-select .dropdown-arrow img {
+        transform: rotate(180deg);
+      }
+      /* немножко красоты для rate */
+      .rate-value strong {
+        color: #000;
+      }
+    </style>
   </head>
+
   <body>
     <main class="container">
       <!-- Header -->
@@ -21,15 +88,15 @@
 
       <!-- Exchange section -->
       <div class="exchange-section">
-        <!-- Bitcoin card -->
-        <div class="exchange-card">
+        <!-- FROM card -->
+        <div class="exchange-card" data-side="from" data-symbol="BTC">
           <div class="card-header">
-            <div class="crypto-info">
-              <div class="crypto-icon bitcoin-icon">
+            <div class="crypto-info select-trigger">
+              <div class="crypto-icon">
                 <img src="/assets/icons/btc.svg" alt="" />
               </div>
               <div class="crypto-name">
-                Bitcoin
+                <span class="crypto-title">Bitcoin</span>
                 <span class="dropdown-arrow"
                   ><img src="/assets/icons/arrowdown.svg" alt=""
                 /></span>
@@ -37,8 +104,13 @@
             </div>
             <button class="action-btn send-btn">Отправить</button>
           </div>
-          <div class="amount3">0,5432</div>
-          <div class="balances">Баланс: 25,86.00</div>
+
+          <div class="amount3" data-amount>0,5432</div>
+          <div class="balances" data-balance>Баланс: 25,86.00</div>
+
+          <!-- dropdown для выбора крипты (рендерится JS-ом) -->
+          <div class="crypto-dropdown"></div>
+
           <!-- Swap button -->
           <div class="swap-button">
             <button class="swap-btn">
@@ -47,15 +119,15 @@
           </div>
         </div>
 
-        <!-- Ethereum card -->
-        <div class="exchange-card">
+        <!-- TO card -->
+        <div class="exchange-card" data-side="to" data-symbol="ETH">
           <div class="card-header">
-            <div class="crypto-info">
-              <div class="crypto-icon ethereum-icon">
+            <div class="crypto-info select-trigger">
+              <div class="crypto-icon">
                 <img src="/assets/icons/eth.svg" alt="" />
               </div>
               <div class="crypto-name">
-                Ethereum
+                <span class="crypto-title">Ethereum</span>
                 <span class="dropdown-arrow"
                   ><img src="/assets/icons/arrowdown.svg" alt=""
                 /></span>
@@ -63,15 +135,19 @@
             </div>
             <button class="action-btn receive-btn">Получить</button>
           </div>
-          <div class="amount3">0,120</div>
-          <div class="balances">Баланс: 30,49.00</div>
+
+          <div class="amount3" data-amount>0,1200</div>
+          <div class="balances" data-balance>Баланс: 30,49.00</div>
+
+          <!-- dropdown -->
+          <div class="crypto-dropdown"></div>
         </div>
       </div>
 
       <!-- Exchange rate -->
       <div class="exchange-rate">
         <div class="rate-label">Ставка</div>
-        <div class="rate-value">1BTC = 0,065 ETH</div>
+        <div class="rate-value" id="rate">1 BTC = 0.0650 ETH</div>
       </div>
 
       <!-- Continue button -->
@@ -82,16 +158,161 @@
       <!-- Navbar -->
       <div data-component="navbar"></div>
     </main>
+
+    <!-- Circles -->
+    <div class="circles">
+      <img class="ellipse" src="/assets/images/ellipse.svg" alt="" />
+      <img class="circle1" src="/assets/images/circle1.png" alt="" />
+      <img class="circle2" src="/assets/images/circle2.png" alt="" />
+      <img class="circle3" src="/assets/images/circle3.png" alt="" />
+      <img class="circle4" src="/assets/images/circle4.png" alt="" />
+    </div>
+
+    <script type="module" src="./scripts/main.js"></script>
+
+    <script>
+      // ----- ДАННЫЕ -----
+      const cryptos = [
+        {
+          symbol: "BTC",
+          name: "Bitcoin",
+          icon: "/assets/icons/btc.svg",
+          balance: 25.86,
+          priceUsd: 65000,
+        },
+        {
+          symbol: "ETH",
+          name: "Ethereum",
+          icon: "/assets/icons/eth.svg",
+          balance: 30.49,
+          priceUsd: 4200,
+        },
+        {
+          symbol: "USDT",
+          name: "Tether",
+          icon: "/assets/icons/usdt.svg",
+          balance: 12890.12,
+          priceUsd: 1,
+        },
+      ];
+
+      const fromCard = document.querySelector(
+        '.exchange-card[data-side="from"]'
+      );
+      const toCard = document.querySelector('.exchange-card[data-side="to"]');
+      const rateEl = document.getElementById("rate");
+      const swapBtn = document.querySelector(".swap-btn");
+
+      // ----- УТИЛИТЫ -----
+      const getCrypto = (symbol) => cryptos.find((c) => c.symbol === symbol);
+
+      function formatNumber(n, decimals = 4) {
+        return Number(n).toFixed(decimals);
+      }
+
+      function renderDropdown(card) {
+        const dropdown = card.querySelector(".crypto-dropdown");
+        dropdown.innerHTML = cryptos
+          .map(
+            (c) => `
+          <div class="crypto-option" data-symbol="${c.symbol}">
+            <img src="${c.icon}" alt="${c.symbol}" />
+            <span>${c.name}</span>
+            <span class="ticker">${c.symbol}</span>
+          </div>
+        `
+          )
+          .join("");
+      }
+
+      function updateCardUI(card, symbol) {
+        const c = getCrypto(symbol);
+        if (!c) return;
+
+        card.dataset.symbol = c.symbol;
+
+        const iconEl = card.querySelector(".crypto-icon img");
+        const titleEl = card.querySelector(".crypto-title");
+        const balanceEl = card.querySelector("[data-balance]");
+
+        iconEl.src = c.icon;
+        iconEl.alt = c.symbol;
+        titleEl.textContent = c.name;
+        balanceEl.textContent = `Баланс: ${c.balance.toLocaleString("ru-RU", {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2,
+        })}`;
+      }
+
+      function updateRate() {
+        const fromSym = fromCard.dataset.symbol;
+        const toSym = toCard.dataset.symbol;
+
+        const from = getCrypto(fromSym);
+        const to = getCrypto(toSym);
+        if (!from || !to) return;
+
+        const rate = from.priceUsd / to.priceUsd;
+        rateEl.innerHTML = `1 <strong>${fromSym}</strong> = ${formatNumber(
+          rate,
+          6
+        )} <strong>${toSym}</strong>`;
+      }
+
+      function closeAllDropdowns(except = null) {
+        document
+          .querySelectorAll(".exchange-card.open-select")
+          .forEach((card) => {
+            if (card !== except) card.classList.remove("open-select");
+          });
+      }
+
+      // ----- ИНИЦ -----
+      [fromCard, toCard].forEach((card) => {
+        renderDropdown(card);
+        updateCardUI(card, card.dataset.symbol);
+      });
+      updateRate();
+
+      // ----- ЛОГИКА ВЫБОРА -----
+      document.addEventListener("click", (e) => {
+        // Открыть селект
+        const trigger = e.target.closest(".select-trigger");
+        if (trigger) {
+          const card = trigger.closest(".exchange-card");
+          if (!card) return;
+          const isOpen = card.classList.contains("open-select");
+          closeAllDropdowns();
+          if (!isOpen) card.classList.add("open-select");
+          return;
+        }
+
+        // Клик по опции
+        const option = e.target.closest(".crypto-option");
+        if (option) {
+          const card = option.closest(".exchange-card");
+          const symbol = option.dataset.symbol;
+          updateCardUI(card, symbol);
+          updateRate();
+          card.classList.remove("open-select");
+          return;
+        }
+
+        // Клик вне — закрыть всё
+        if (!e.target.closest(".crypto-dropdown")) {
+          closeAllDropdowns();
+        }
+      });
+
+      // ----- SWAP -----
+      swapBtn.addEventListener("click", () => {
+        const fromSymbol = fromCard.dataset.symbol;
+        const toSymbol = toCard.dataset.symbol;
+
+        updateCardUI(fromCard, toSymbol);
+        updateCardUI(toCard, fromSymbol);
+        updateRate();
+      });
+    </script>
   </body>
-
-  <!-- Circles -->
-  <div class="circles">
-    <img class="ellipse" src="./assets/images/ellipse.svg" alt="" />
-    <img class="circle1" src="./assets/images/circle1.png" alt="" />
-    <img class="circle2" src="./assets/images/circle2.png" alt="" />
-    <img class="circle3" src="./assets/images/circle3.png" alt="" />
-    <img class="circle4" src="./assets/images/circle4.png" alt="" />
-  </div>
-
-  <script type="module" src="./scripts/main.js"></script>
 </html>

@@ -1,234 +1,217 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles/main.css" />
-    <title>Home Page</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Статистика</title>
+    <style>
+      :root {
+        --card-bg: #f7f7f7;
+        --text: #111;
+        --grid: #e5e5ea;
+        --axis0: #d7d7d7;
+        --line: #ff9500;
+        --dot: #2c2c2e;
+        --highlight-bar: rgba(255, 149, 0, 0.08);
+      }
+
+      .statistics {
+        background: var(--card-bg);
+        border-radius: 22px;
+        padding: 20px 20px 28px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+      }
+
+      .statistics-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 12px;
+      }
+
+      .statistics h2 {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--text);
+      }
+
+      .current-price {
+        font-size: 14px;
+        color: #6b7280;
+        margin-top: 4px;
+        font-weight: 500;
+      }
+
+      .period-selector {
+        position: relative;
+      }
+
+      .period-btn {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        background: #fff;
+        border: 1px solid #e5e5ea;
+        border-radius: 18px;
+        padding: 8px 16px;
+        font-size: 15px;
+        cursor: pointer;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+        transition: all 0.2s ease;
+        font-weight: 500;
+      }
+
+      .period-btn:hover {
+        border-color: #d1d1d6;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .period-list {
+        position: absolute;
+        right: 0;
+        top: calc(100% + 8px);
+        background: #fff;
+        border: 1px solid #e5e5ea;
+        border-radius: 12px;
+        overflow: hidden;
+        display: none;
+        z-index: 10;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        min-width: 120px;
+      }
+
+      .period-list button {
+        display: block;
+        width: 100%;
+        padding: 12px 16px;
+        background: #fff;
+        border: 0;
+        text-align: left;
+        cursor: pointer;
+        font-size: 15px;
+        transition: background-color 0.15s ease;
+        font-weight: 500;
+      }
+
+      .period-list button:hover {
+        background: #f5f5f5;
+      }
+
+      .chart-wrapper {
+        height: 280px;
+        position: relative;
+        margin-top: 8px;
+      }
+
+      /* Улучшенный tooltip */
+      .chartjs-tooltip {
+        position: absolute;
+        background: #2c2c2e;
+        color: #fff;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 16px;
+        font-weight: 600;
+        white-space: nowrap;
+        pointer-events: none;
+        transform: translate(-50%, -120%);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        opacity: 0;
+        transition: opacity 0.2s ease;
+        z-index: 5;
+      }
+
+      .chartjs-tooltip.visible {
+        opacity: 1;
+      }
+
+      .chartjs-tooltip:after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-top: 8px solid #2c2c2e;
+      }
+
+      /* Подсветка столбца */
+      .highlight-column {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        background: var(--highlight-bar);
+        border-radius: 4px;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .highlight-column.visible {
+        opacity: 1;
+      }
+
+      /* Анимация загрузки */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .statistics {
+        animation: fadeIn 0.4s ease-out;
+      }
+    </style>
   </head>
   <body>
-    <main class="homePage globalContainer">
-      <!-- Header -->
-      <div class="container2" data-component="header"></div>
+    <div class="statistics">
+      <div class="statistics-header">
+        <div>
+          <h2>Статистика</h2>
+          <div class="current-price">
+            Текущая цена: <span id="currentPrice">$0</span>
+          </div>
+        </div>
 
-      <!-- Stories Section -->
-      <section class="stories">
-        <div onclick="openStory(1)">
-          <img src="/assets/images/stories1.png" alt="" /><span>Crypto 1</span>
-        </div>
-        <div onclick="openStory(1)">
-          <img src="/assets/images/stories2.png" alt="" /><span>Crypto 2</span>
-        </div>
-        <div onclick="openStory(1)">
-          <img src="/assets/images/stories3.png" alt="" /><span>Crypto 3</span>
-        </div>
-        <div>
-          <img src="/assets/images/stories4.png" alt="" /><span>Crypto 4</span>
-        </div>
-        <div>
-          <img src="/assets/images/stories5.png" alt="" /><span>Crypto 5</span>
-        </div>
-        <div>
-          <img src="/assets/images/stories5.png" alt="" /><span>Crypto 5</span>
-        </div>
-        <div>
-          <img src="/assets/images/stories5.png" alt="" /><span>Crypto 5</span>
-        </div>
-      </section>
-
-      <!-- Balance Section -->
-      <section class="balance">
-        <div class="balanceBlock">
-          <span>Общий баланс</span>
-          <h4>$16,500.80</h4>
-          <img
-            class="balanceElipce"
-            src="/assets/images/balanceElipce.svg"
-            alt=""
-          />
-        </div>
-        <div class="balanceDetails">
-          <div>
-            <span>Инвестировано</span>
-            <h5>$1,450,37</h5>
-          </div>
-          <span class="line"></span>
-          <div>
-            <span>Инвестировано</span>
-            <h5>$1,450,37</h5>
-          </div>
-          <span class="line"></span>
-          <div>
-            <span>Заработано</span>
-            <h5>$1,450,37</h5>
-          </div>
-        </div>
-      </section>
-      <div class="cryptoBalances container2">
-        <div class="card">
-          <div class="cardHeader">
-            <div class="eth">
-              <img src="/assets/icons/eth.svg" alt="ETH" />
-              <span>ETH</span>
-            </div>
-            <div class="percentage">
-              <span>2.5%</span><img src="/assets/icons/upArrow.svg" alt="" />
-            </div>
-          </div>
-          <div class="balanceAmount">
-            <h5>$12,250.00</h5>
-            <span>$1,120.28</span>
-          </div>
-        </div>
-        <div class="card">
-          <div class="cardHeader">
-            <div class="eth">
-              <img src="/assets/icons/btc.svg" alt="ETH" />
-              <span>BTC</span>
-            </div>
-            <div class="percentage">
-              <span>2.5%</span><img src="/assets/icons/downArrow.svg" alt="" />
-            </div>
-          </div>
-          <div class="balanceAmount">
-            <h5>$12,250.00</h5>
-            <span>$1,120.28</span>
-          </div>
-        </div>
-        <div class="card">
-          <div class="cardHeader">
-            <div class="eth">
-              <img src="/assets/icons/btc.svg" alt="ETH" />
-              <span>BTC</span>
-            </div>
-            <div class="percentage">
-              <span>2.5%</span><img src="/assets/icons/downArrow.svg" alt="" />
-            </div>
-          </div>
-          <div class="balanceAmount">
-            <h5>$12,250.00</h5>
-            <span>$1,120.28</span>
-          </div>
-        </div>
-        <div class="card">
-          <div class="cardHeader">
-            <div class="eth">
-              <img src="/assets/icons/btc.svg" alt="ETH" />
-              <span>BTC</span>
-            </div>
-            <div class="percentage">
-              <span>2.5%</span><img src="/assets/icons/downArrow.svg" alt="" />
-            </div>
-          </div>
-          <div class="balanceAmount">
-            <h5>$12,250.00</h5>
-            <span>$1,120.28</span>
+        <div class="period-selector">
+          <button class="period-btn" id="periodBtn">
+            Месяц
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M7 10l5 5 5-5"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          <div class="period-list" id="periodList">
+            <button data-range="week">Неделя</button>
+            <button data-range="month">Месяц</button>
+            <button data-range="year">Год</button>
           </div>
         </div>
       </div>
-      <div class="actionButtons container2">
-        <button>
-          <img src="/assets/icons/внести.svg" alt="" /><span>Внести</span>
-        </button>
-        <button>
-          <img src="/assets/icons/вывести.svg" alt="" /><span>Вывести</span>
-        </button>
-        <button>
-          <img src="/assets/icons/обмен.svg" alt="" /><span>Обмен</span>
-        </button>
+
+      <div class="chart-wrapper">
+        <div class="highlight-column" id="highlightColumn"></div>
+        <canvas id="chart"></canvas>
       </div>
-
-      <!-- Transactions Section -->
-      <section class="transactions">
-        <h4>Переводы</h4>
-        <div class="dashed"></div>
-        <div class="transactionList">
-          <div class="addTransaction">
-            <img src="/assets/icons/plus.svg" alt="" />
-          </div>
-          <div class="transactionItem">
-            <img src="/assets/images/vitaly2.png" alt="" />
-            <span>Виталий</span>
-            <p>Уровень 11</p>
-          </div>
-          <div class="transactionItem">
-            <img src="/assets/images/vitaly2.png" alt="" />
-            <span>Виталий</span>
-            <p>Уровень 11</p>
-          </div>
-          <div class="transactionItem">
-            <img src="/assets/images/vitaly2.png" alt="" />
-            <span>Виталий</span>
-            <p>Уровень 11</p>
-          </div>
-          <div class="transactionItem">
-            <img src="/assets/images/vitaly2.png" alt="" />
-            <span>Виталий</span>
-            <p>Уровень 11</p>
-          </div>
-          <div class="transactionItem">
-            <img src="/assets/images/vitaly2.png" alt="" />
-            <span>Виталий</span>
-            <p>Уровень 11</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="container2">
-        <div class="statistics">
-          <div class="statistics-header">
-            <div>
-              <h2>Статистика</h2>
-              <div class="current-price">
-                Текущая цена: <span id="currentPrice">$0</span>
-              </div>
-            </div>
-
-            <div class="period-selector">
-              <button class="period-btn" id="periodBtn">
-                Месяц
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M7 10l5 5 5-5"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </button>
-              <div class="period-list" id="periodList">
-                <button data-range="week">Неделя</button>
-                <button data-range="month">Месяц</button>
-                <button data-range="year">Год</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="chart-wrapper">
-            <div class="highlight-column" id="highlightColumn"></div>
-            <canvas id="chart"></canvas>
-          </div>
-        </div>
-      </section>
-
-      <!-- Navbar -->
-      <div class="container2" data-component="navbar"></div>
-    </main>
-    <!-- Circles -->
-    <div class="circles">
-      <img class="ellipse" src="./assets/images/ellipse.svg" alt="" />
-      <img class="circle1" src="./assets/images/circle1.png" alt="" />
-      <img class="circle2" src="./assets/images/circle2.png" alt="" />
-      <img class="circle3" src="./assets/images/circle3.png" alt="" />
-      <img class="circle4" src="./assets/images/circle4.png" alt="" />
     </div>
-    <script>
-      function openStory(id) {
-        window.location.href = `story.html?story=${id}`;
-      }
-    </script>
-    <script type="module" src="./scripts/main.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
     <script>
       // Данные для разных периодов
